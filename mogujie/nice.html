@@ -1,0 +1,335 @@
+<style type="text/css">
+	.swiper-container,
+	.swiper-slide {
+		width: 100%;
+	}
+	
+	.swiper-slide img {
+		width: 100%;
+		height: 3.6rem;
+	}
+	.kill{
+		width: 100%;
+		position: relative;
+	    margin: 0.3rem auto 0rem;	
+	    background: white;
+	}
+	.time{
+		width: 100%;
+    	font-size: 0.3rem;
+    	padding: .3rem .3rem .2rem;
+	}
+	.time :nth-child(n){
+		display: inline-block;
+	}
+	.dian{
+		width: .08rem;
+	    height: .08rem;
+	    background-color: black;
+	    border-radius: .1rem;
+	    margin: 0 .12rem 0.05rem .12rem
+	}
+	.counting{
+	    margin-left: .1rem;
+	}
+	.counting span{
+		font-size: 0.25rem;
+		padding: 0 0.06rem;
+		color: white;
+		line-height: .4rem;
+		border-radius: 0.06rem;
+		margin: auto .05rem;
+		background: black;
+	}
+	.time a{
+		float: right;
+		line-height: 1;
+    	font-size: .3rem;
+	}
+	.time a img{
+	    height: .22rem;
+	}
+	.shop{
+		overflow-x: scroll;
+		white-space: nowrap;
+		padding: .1rem 0 .16rem .3rem;
+	}
+	.item{
+		display: inline-block;
+	    width: 1.8rem;
+    	height: 2.5rem;
+    	margin-right: .2rem;
+	}
+	.item div{
+		width: 1.5rem;
+	    overflow: hidden;
+	    margin: 0 .15rem;
+	}
+	.item div img{
+		width: 100%;
+	}
+	.title{
+		color: #666;
+	    font-size: .16rem;
+	    margin: .15rem 0 0;
+	    white-space: nowrap;
+	    overflow: hidden;
+	    text-overflow: ellipsis;
+	}
+	.price{
+	    font-size: .26rem;
+	    color: #F25;
+	    white-space: nowrap;
+	    overflow: hidden;
+	    text-overflow: ellipsis;
+	}
+	.box1{
+		height: 4.2rem;
+		width: 100%;
+    	background-color: #fff;
+    	overflow: hidden;
+	}
+	.box1 p{
+		position: relative;
+		z-index: 2;
+		margin: .32rem 0 .08rem .28rem;
+    	font-size: .32rem;
+    	color: #333;
+    	line-height: 1;
+	}
+	.box1 img{
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+	}
+	.box1 div:nth-of-type(1){
+		float: left;
+		position: relative;
+		width: 3.2rem;
+    	height: 100%;
+    	border-right: 1px solid #e5e5e5;
+    	overflow: hidden;
+	}
+	.box1 div:nth-of-type(2){
+		display: inline-block;
+		position: relative;
+    	height: 50%;
+    	overflow: hidden;
+        width: 4.3rem;
+        border-bottom: 1px solid #e5e5e5;
+	}
+	.box1 div:nth-of-type(3){
+		float: left;
+		position: relative;
+		width: 4.3rem;
+    	height: 50%;
+    	overflow: hidden;
+	}
+	.box2{
+		width: 100%;
+	    background-color: #fff;
+	    margin-bottom: .2rem !important;
+	    overflow: hidden;
+	    padding-top: .3rem
+	}
+	.top {
+		padding: 0.3rem 0 0.2rem 0;
+		text-align: center;
+		font-size: 0.21rem;
+		color: #999999;
+	}
+	
+	.top div:nth-of-type(1) {
+		margin-bottom: 0.08rem;
+		line-height: 1;
+		font-size: 0.3rem;
+		color: #333333;
+		background: url("img/bg.png") no-repeat center center;
+		background-size: 3.13rem auto;
+	}
+	.box3 {
+		display: flex;
+		flex-wrap: wrap;
+		width: 100%;
+		background-color: #fff;
+		margin-bottom: 0.2rem!important;
+		overflow: hidden;
+		padding-top: 0.3rem;
+	}
+	
+	.box3 .type {
+		width: 25%;
+		overflow: hidden;
+		margin-bottom: 0.2rem;
+	}
+	
+	.box3 .img {
+		margin: 0 auto;
+		height: 1.2rem !important;
+		width: 1.2rem !important;
+	}
+	
+	.box3 .img img {
+		width: 100%;
+	}
+	
+	.box3 .title {
+		height: 0.37rem;
+		line-height: 0.37rem;
+		font-size: 0.26rem;
+		color: #333;
+		text-align: center;
+		width: 90%;
+		margin: 0.1rem auto 0;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+	.box4 {
+		display: flex;
+		flex-wrap: wrap;
+		width: 100%;
+		background-color: #fff;
+	}
+	
+	.box4 .shop {
+		width: 47%;
+		height: 6.04rem;
+		margin: 2% 0 0 2%;
+		background: #fff;
+		border-radius: .06rem;
+		overflow: hidden;
+	}
+	
+	.box4 .shop .shopimg {
+		width: 100%;
+		height: 4.7rem;
+	}
+	
+	.box4 .info {
+		padding: .12rem .18rem 0;
+	}
+	
+	.box4 .info .tops {
+		height: .74rem;
+		overflow: hidden;
+	}
+	
+	.box4 .titles {
+		width: 100%;
+		line-height: .34rem;
+		max-height: .67rem;
+		font-size: .24rem;
+		color: #333;
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+	}
+	
+	.box4 .price {
+		float: left;
+		max-width: 45%;
+		margin-top: .02rem;
+		font-size: .3rem;
+		font-weight: 700;
+		color: #333;
+		overflow: hidden;
+	}
+	
+	.box4 .like {
+		float: right;
+		max-width: 45%;
+		height: .24rem;
+		line-height: .24rem;
+		margin-top: .12rem;
+		padding-right: .3rem;
+		background: url("img/star.png") 100% no-repeat;
+		background-size: auto .23rem;
+		font-size: .24rem;
+		color: #999;
+		overflow: hidden;
+	}
+	.box4 .tag img{
+	    height: .32rem;
+	    width: auto;
+	    margin: .05rem .04rem 0 0;
+	}
+</style>
+<div class="search hide"></div>
+<div class="swiper-container">
+	<div class="swiper-wrapper">
+		<div class="swiper-slide" ng-repeat="x in swiper"><img src='{{x.image}}' /></div>
+	</div>
+	<div class="swiper-pagination"></div>
+</div>
+<div class="kill">
+	<div class="time">
+		<span>{{kill.title}}</span><span class="dian"></span><span>{{kill.viceTitle}}</span>
+		<div class="counting">
+			<span>{{houre < 10? "0"+houre:houre}}</span>:<span>{{mint < 10? "0"+mint:mint}}</span>:<span>{{sec < 10? "0"+sec:sec}}</span>
+		</div>
+		<a href="javascript:;"><img src="img/more.png"/></a>
+	</div>
+	<div class="shop">
+		<div class="item" ng-repeat="x in shop">
+			<a href="javascript:;">
+				<div>
+					<img src="{{x.img}}">
+				</div>
+				<p class="title">{{x.title}}</p>
+				<p class="price">¥{{x.salePrice}}<span style="display:none;"><del>¥{{x.price}}</del></span></p>
+			</a>
+		</div>
+	</div>
+</div>
+<div class="box1">
+	<div ng-repeat="x in box1">
+		<a href="javascript:;">
+			<p>{{x.title}}</p>
+			<img src="{{x.image}}"/>
+		</a>
+	</div>
+</div>
+<div class="box2">
+	<div class="top">
+		<div>
+			良品推荐
+		</div>
+	</div>
+	<div class="box3">
+		<div ng-repeat="x in box3" class="type">
+			<a href="javascript:;">
+				<div class="img">
+					<img src="{{x.image}}">
+				</div>
+				<div class="title">{{x.title}}</div>
+			</a>
+		</div>
+	</div>
+</div>
+<div class="top">
+		<div>
+			猜你喜欢
+		</div>
+	</div>
+<div class="box4" infinite-scroll="dome.data()" infinite-scroll-distance="1" infinite-scroll-disabled="dome.btn">
+	<div class="shop" ng-repeat="x in dome.shop">
+		<a href="javascript:;">
+			<img src="{{x.img}}" class="shopimg"/>
+			<div class="info">
+				<div class="tops">
+					<p class="titles">{{x.title}}</p>
+					<div class="tag" ng-if="x.leftbottom_taglist.length>0">
+						<img src="{{y}}" ng-repeat="y in x.leftbottom_taglist"/>
+					</div>
+				</div>
+				<div>
+					<p class="price">￥{{x.price}}</p>
+					<p class="like">{{x.cfav}}</p>
+				</div>
+			</div>
+		</a>
+	</div>
+</div>
+

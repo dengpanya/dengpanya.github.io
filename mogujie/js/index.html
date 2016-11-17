@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+		<title>首页</title>
+	</head>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/swiper-3.3.1.jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<link rel="stylesheet" type="text/css" href="js/swiper-3.3.1.min.css"/>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		img{
+			vertical-align: bottom;
+		}
+		html,body,#container{
+			height: 100%;
+			font-family: "微软雅黑";
+			font-size: 0.24rem;
+			background: white;
+		}
+		#container{
+			display: flex;
+			flex-direction: column;
+			overflow: hidden;
+		}
+		#container header:nth-child(1) img{
+			width: 100%;
+			height: 2rem;
+		}
+		section{
+			flex: 1;
+			overflow-y: auto;
+		}
+		section header{
+			display: flex;
+			font-size: 0;
+			width: 100%;
+			height: 0.92rem;
+			padding: 0.15rem 0.1rem;
+		}
+		section header a{
+			display: inline-block;
+   			width: 1rem;
+   			height: 100%;
+    		background-size: 0.44rem auto;
+		}
+		
+		section header input{
+			flex: 1;
+			outline: none;
+			width: 100%;
+    		padding-left: 0.6rem;
+    		height: 0.6rem;
+    		font-size: 0.24rem;
+    		color: #999;
+    		border: none;
+   			background-size: 0.31rem auto;
+   			background-color: #eee;
+    		border-radius: 0.06rem;
+		}
+		.swiper-container,.swiper-slide{
+			width: 100%;
+		}
+		.swiper-slide img{
+			width: 100%;
+			height: 3.6rem;
+		}
+		.go img{
+			width: 100%;
+		}
+		.box1{
+			width: 100%;
+			background-color: #d7e1ea;
+    		margin: -0.3rem auto 0rem;
+    		padding: 0.2rem 0.2rem 0.1rem;
+		}
+		.box1 a:nth-of-type(1) img{
+			width: 3.5rem;
+			border-radius: 0.05rem;
+		}
+		.box1 a:nth-of-type(2) img{
+			width: 1.7rem;
+			margin-left: 0.1rem;
+		}
+		.box1 a:nth-of-type(3) img{
+			width: 1.7rem;
+			margin-left: 0.1rem;
+		}
+		.box2{
+			width: 100%;
+			background-color: #d7e1ea;
+    		margin: 0rem auto 0rem;
+   			padding: 0.1rem 0.2rem 0.1rem;
+   			overflow: hidden;
+		}
+		.box2 a{
+			float: left;
+		}
+		.box2 a:nth-of-type(1) img{
+			width: 3.5rem;
+			border-radius: 0.05rem;
+		}
+		.box2 a:nth-of-type(2) img{
+			width: 1.7rem;
+			margin-left: 0.1rem;
+		}
+		.box2 a:nth-of-type(3) img{
+			width: 1.7rem;
+			margin-left: 0.1rem;
+		}
+		.box2 a:nth-of-type(4) img{
+			width: 1.7rem;
+			margin-left: 0.1rem;
+			margin-top: 0.1rem;
+		}
+		.box2 a:nth-of-type(5) img{
+			width: 1.7rem;
+			margin-left: 0.1rem;
+			margin-top: 0.1rem;
+		}
+		#footer{
+			width: 100%;
+			height: 0.98rem;
+			color: #999999;
+		    font-size: 0.24rem;
+		    display: flex;
+		    overflow: hidden;
+   			border-top: 1px solid #E5E5E5;
+		}
+		#footer a{
+			display: block;
+			height: 100%;
+			text-align: center;
+		}
+		
+		#footer a div:nth-child(1){
+			width: 0.4rem;
+    		height: 0.46rem;
+    		overflow: hidden;
+    		margin: 0.1rem auto 0;
+		}
+		#footer a div:nth-child(1) img{
+			width: 0.4rem;
+    		height: 0.4rem;
+		}
+		
+	</style>
+	<body>
+		<div id="container">
+			<header id="top">
+				<img src=""/>
+			</header>
+			<section>
+				<header>
+    				<a href=""></a>
+    				<input type="text" placeholder="简约百搭欧美大牌短靴" id="search">
+    				<a href=""></a>
+				</header>
+				<div class="swiper-container">
+  					<div class="swiper-wrapper">
+    					
+  					</div>
+  					<div class="swiper-pagination"></div>
+				</div>
+				<div class="go">
+					<a href="javascript:;"><img src=""/></a>
+				</div>
+				<div class="box1">
+				</div>
+				<div class="box2">
+				</div>
+			</section>
+			<footer>
+				<a href="index.html">
+					<div>
+		
+					</div>
+					<div>
+						首页
+					</div>
+				</a>
+				<a href="index.html"></a>
+				<a href="type.html"></a>
+				<a href="index.html"></a>
+			</footer>
+		</div>
+	</body>
+	<script type="text/javascript">
+		window.onload=function(){
+			$(function(){
+				var a= null;
+				$("html").css({fontSize:50/(375/100)+"vw"});
+					$.ajax({
+						url:"http://mce.mogucdn.com/jsonp/multiget/3?pids=7356%2C3756%2C24513%2C24522%2C24526",//3756轮播图 7356 top图 24513 买手精选
+//						url:"http://mce.mogucdn.com/jsonp/multiget/3?pids=24532%2C3093%2C4746%2C4604",//3093 买实惠 4604 底部 4746 热门分类  24532 家居内衣
+						dataType:"jsonp",
+						success:function(data){
+							var data=data.data;
+							console.log(data);
+							$("#top img").attr("src",data["7356"].list[0].bg);
+							$.each(data["3756"].list, function(v,k) {
+								$(".swiper-wrapper").append('<div class="swiper-slide"><img src="'+k.image+'"/></div>')
+							});
+							var mySwiper = new Swiper('.swiper-container', {
+								autoplay: 3000,
+								loop:true,
+								pagination : '.swiper-pagination',
+								paginationClickable :true,
+								autoplayDisableOnInteraction : false,
+							});
+							$(".go img").attr("src",data["24513"].list[0].image);
+							$.each(data["24522"].list, function(v,k) {
+								$(".box1").append('<a href="javascript:;"><img src="'+k.image+'"/></a>')
+							});
+							$.each(data["24526"].list, function(v,k) {
+								$(".box2").append('<a href="javascript:;"><img src="'+k.image+'"/></a>')
+							});
+						}
+					});
+					
+					
+				
+				
+			})
+		}
+	</script>
+</html>

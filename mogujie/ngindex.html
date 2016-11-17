@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+		<title>首页</title>
+	</head>
+	<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/swiper-3.3.1.jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/angular.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/ng-infinite-scroll.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/angular-route.min.js" type="text/javascript" charset="utf-8"></script>
+	<link rel="stylesheet" type="text/css" href="js/swiper-3.3.1.min.css" />
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		
+		img {
+			border: 0;
+			outline: none;
+			vertical-align: bottom;
+		}
+		
+		html,
+		body,
+		#container {
+			height: 100%;
+			font-family: "微软雅黑";
+			font-size: 0.24rem;
+			background: #f6f6f6;
+		}
+		
+		a {
+			text-decoration: none;
+		}
+		/*#container {
+			display: flex;
+			flex-direction: column;
+			overflow-y: auto;
+		}
+		section{
+			flex: 1;
+			overflow-y: auto;
+		}*/
+		#container header:nth-child(1) img {
+			width: 100%;
+			height: 2rem;
+		}
+		footer {
+			position: fixed;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			height: 0.98rem;
+			color: #999999;
+			font-size: 0.24rem;
+			display: flex;
+			overflow: hidden;
+			border-top: 1px solid #E5E5E5;
+			background: white;
+		}
+		
+		footer a {
+			width: 25%;
+			height: 100%;
+			text-align: center;
+			color: #666;
+		}
+		
+		footer a div:nth-child(1) {
+			width: 0.4rem;
+			height: 0.46rem;
+			overflow: hidden;
+			margin: 0.1rem auto 0;
+		}
+		
+		footer a div:nth-child(1) img {
+			width: 100%
+		}
+	</style>
+
+	<body ng-controller="ctrl" scroll="no">
+		<div id="container" ng-cloak>
+			<header ng-if="search()">
+				<img src='{{bg}}' />
+			</header>
+			<header id="top" ng-if="search()">
+				<a href="javascript:;"></a>
+				<input type="text" placeholder=" 简约百搭欧美大牌短靴" id="search" ng-disabled="true">
+				<a href="javascript:;"></a>
+			</header>
+			<section ng-view>
+				
+			</section>
+			<footer>
+				<a href={{foota[$index].href}} ng-repeat="x in footer">
+					<div>
+						<img ng-src="{{x.image}}" />
+					</div>
+					<div>
+						{{x.title}}
+					</div>
+				</a>
+			</footer>
+		</div>
+	</body>
+	<script type="text/javascript">
+		angular.element("html").css({
+			fontSize: 50 / (375 / 100) + "vw"
+		})//设置HTML字体大小
+		var app = angular.module("app", ["infinite-scroll", "ngRoute"]);
+		//主控制器
+		app.controller("ctrl", function($scope, $http, $timeout) {
+			//判断搜索框和最上层图片是否显示			
+			$scope.search = function(){
+				if(angular.element(".search").hasClass("show")){
+					return true
+				}else{
+					return false;
+				}
+			}
+			//头部尾部以及首页部分图片
+			$http.jsonp("http://mce.mogucdn.com/jsonp/multiget/3?pids=7356%2C3756%2C3093%2C4746%2C4604&callback=JSON_CALLBACK")
+				.success(function(repson) {
+					$scope.bg = repson.data["7356"].list[0].bg;
+					$scope.footer = repson.data["4604"].list;
+				})
+			//尾部a标签链接地址
+			$scope.foota = [{
+				href: "#/"
+			}, {
+				href: "#/nice"
+			}, {
+				href: "#/type"
+			}, {
+				href: "#/my"
+			}]
+		})
+		//路由 单页模式配置
+		app.config(['$routeProvider', function($routeProvider) {
+			$routeProvider
+				.when('/', {
+					templateUrl: 'home.html',
+					controller:'homectrl'
+				})
+				.when('/nice', {
+					templateUrl: 'nice.html',
+					controller:'nicectrl'
+				})
+				.when('/type', {
+					templateUrl: 'type.html',
+					controller:'typectrl'
+				})
+				.when('/my', {
+					templateUrl: 'my.html',
+					controller:'myctrl'
+				})
+				.otherwise({
+					redirectTo: '/'
+				});
+		}]);
+		//首页控制器
+		app.controller("homectrl",function($scope,$timeout,$http,dome){
+			$scope.dome = new dome();//首页商品以及瀑布流			
+			$http.jsonp("http://mce.mogucdn.com/jsonp/multiget/3?pids=7356%2C3756%2C3093%2C4746%2C4604&callback=JSON_CALLBACK")
+				.success(function(repson) {
+					$scope.swiper = repson.data["3756"].list;
+					$scope.box2 = repson.data["3093"].list;
+					$scope.box3 = repson.data["4746"].list;
+				})//头部尾部以及首页部分图片
+		})
+//		良品页控制器
+		app.controller("nicectrl",function($scope,$http,$interval,dome){
+			$http.jsonp("http://mce.mogucdn.com/jsonp/multiget/3?pids=7290%2C8927%2C7286%2C11295%2C11303%2C4604&callback=JSON_CALLBACK")
+			.success(function(repson){
+				$scope.swiper = repson.data["7290"].list;
+				$scope.kill = repson.data["8927"].list[0];
+				$scope.shop = repson.data["8927"].list[0].list;
+				$scope.box1 = repson.data["7286"].list;
+				$scope.box3 = repson.data["11303"].list;
+				$scope.houre = parseInt($scope.kill.time/3600);
+				$scope.mint = parseInt($scope.kill.time%3600/60);
+				$scope.sec = parseInt($scope.kill.time%3600%60);
+				$interval(function(){
+					$scope.sec--;
+					if($scope.sec<10){
+						if($scope.sec<0){
+							$scope.mint--;
+							$scope.sec = 59 ;
+						}
+					}
+					if($scope.mint<10){
+						if($scope.mint<0){
+							$scope.houre--;
+							$scope.mint = 59 ;
+						}
+					}
+				},1000)	
+			})
+			$scope.dome = new dome();
+			$scope.dome.url = "http://list.mogujie.com/search?cKey=h5-quality&fcid=&pid=7626&searchTag=&sort=pop&page=1&ratio=3%3A4&_version=1&_="+ dome.page +"&callback=JSON_CALLBACK"
+		})
+//		类型页控制器
+//		app.controller("typectrl",function($scope){
+//			
+//		})
+//		我的主页控制器
+//		app.controller("myctrl",function($scope){
+//			
+//		})
+		//数据交互工厂
+		app.factory("dome",function($http){
+			var dome = function(){
+				this.shop = [];
+				this.btn = false;
+				this.page = Math.ceil(Math.random() * 10000000000000);
+				this.url = "http://list.mogujie.com/search?cKey=h5-shopping&fcid=&pid=9750&searchTag=&sort=pop&page=1&ratio=3%3A4&_version=1&_=" + this.page + "&callback=JSON_CALLBACK"
+			};
+			dome.prototype.data = function(){
+				if(this.btn){
+					return
+				}else{
+					this.btn = true;
+					$http.jsonp(this.url)
+					.success(function(repson) {
+						var shop = repson.result.wall.docs;
+						for(var i = 0; i < shop.length; i++) {
+							this.shop.push(shop[i])
+						}
+						this.btn = false;
+						this.page = Math.ceil(Math.random() * 10000000000000);
+					}.bind(this))
+				}
+			}
+			return dome;
+		})
+	</script>
+	<script type="text/javascript">
+		window.onload=function(){
+			$(function(){
+				var mySwiper = new Swiper('.swiper-container', {
+					autoplay: 3000,
+					loop: true,
+					pagination: '.swiper-pagination',
+					paginationClickable: true,
+					autoplayDisableOnInteraction: false,
+				});
+			})
+		}
+	</script>
+</html>
