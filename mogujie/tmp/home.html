@@ -282,10 +282,10 @@
 			猜你喜欢
 		</div>
 	</div>
-	<div class="box4" infinite-scroll="dome.data()" infinite-scroll-distance="1" infinite-scroll-disabled="dome.btn">
+	<div class="box4" infinite-scroll="dome.data()" infinite-scroll-distance="2" infinite-scroll-disabled="dome.btn">
 		<div class="shop" ng-repeat="x in dome.shop">
 			<a href="javascript:;">
-				<img src="{{x.img}}" />
+				<img data-ui-lazyload="{{x.img}}" class="lazy"/>
 				<div class="info">
 					<div class="top">
 						<p class="title">{{x.title}}</p>

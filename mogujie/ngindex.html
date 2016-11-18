@@ -11,6 +11,7 @@
 	<script src="js/angular.min.js" type="text/javascript" charset="utf-8"></script>
 	<script src="js/ng-infinite-scroll.min.js" type="text/javascript" charset="utf-8"></script>
 	<script src="js/angular-route.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/lazy.js" type="text/javascript" charset="utf-8"></script>
 	<link rel="stylesheet" type="text/css" href="js/swiper-3.3.1.min.css" />
 	<style type="text/css">
 		* {
@@ -112,7 +113,7 @@
 		angular.element("html").css({
 			fontSize: 50 / (375 / 100) + "vw"
 		})//设置HTML字体大小
-		var app = angular.module("app", ["infinite-scroll", "ngRoute"]);
+		var app = angular.module("app", ["infinite-scroll", "ngRoute","lazyload"]);
 		//主控制器
 		app.controller("ctrl", function($scope, $http, $timeout) {
 			//判断搜索框和最上层图片是否显示			
@@ -133,30 +134,30 @@
 			$scope.foota = [{
 				href: "#/"
 			}, {
-				href: "#/nice"
+				href: "#/tmp/nice"
 			}, {
-				href: "#/type"
+				href: "#/tmp/type"
 			}, {
-				href: "#/my"
+				href: "#/tmp/my"
 			}]
 		})
 		//路由 单页模式配置
 		app.config(['$routeProvider', function($routeProvider) {
 			$routeProvider
 				.when('/', {
-					templateUrl: 'home.html',
+					templateUrl: 'tmp/home.html',
 					controller:'homectrl'
 				})
-				.when('/nice', {
-					templateUrl: 'nice.html',
+				.when('/tmp/nice', {
+					templateUrl: 'tmp/nice.html',
 					controller:'nicectrl'
 				})
-				.when('/type', {
-					templateUrl: 'type.html',
+				.when('/tmp/type', {
+					templateUrl: 'tmp/type.html',
 					controller:'typectrl'
 				})
-				.when('/my', {
-					templateUrl: 'my.html',
+				.when('/tmp/my', {
+					templateUrl: 'tmp/my.html',
 					controller:'myctrl'
 				})
 				.otherwise({
@@ -166,7 +167,7 @@
 		//首页控制器
 		app.controller("homectrl",function($scope,$timeout,$http,dome){
 			$scope.dome = new dome();//首页商品以及瀑布流			
-			$http.jsonp("https://mce.mogucdn.com/jsonp/multiget/3?pids=7356%2C3756%2C3093%2C4746%2C4604&callback=JSON_CALLBACK")
+			$http.jsonp("http://mce.mogucdn.com/jsonp/multiget/3?pids=7356%2C3756%2C3093%2C4746%2C4604&callback=JSON_CALLBACK")
 				.success(function(repson) {
 					$scope.swiper = repson.data["3756"].list;
 					$scope.box2 = repson.data["3093"].list;
@@ -175,7 +176,7 @@
 		})
 //		良品页控制器
 		app.controller("nicectrl",function($scope,$http,$interval,dome){
-			$http.jsonp("https://mce.mogucdn.com/jsonp/multiget/3?pids=7290%2C8927%2C7286%2C11295%2C11303%2C4604&callback=JSON_CALLBACK")
+			$http.jsonp("http://mce.mogucdn.com/jsonp/multiget/3?pids=7290%2C8927%2C7286%2C11295%2C11303%2C4604&callback=JSON_CALLBACK")
 			.success(function(repson){
 				$scope.swiper = repson.data["7290"].list;
 				$scope.kill = repson.data["8927"].list[0];
@@ -199,6 +200,10 @@
 							$scope.mint = 59 ;
 						}
 					}
+					if($scope.houre == 0&& $scope.mint == 0&& $scope.sec == 0){
+						$scope.dome = new dome();
+						$scope.dome.url = "http://list.mogujie.com/search?cKey=h5-quality&fcid=&pid=7626&searchTag=&sort=pop&page=1&ratio=3%3A4&_version=1&_="+ dome.page +"&callback=JSON_CALLBACK"
+					}
 				},1000)	
 			})
 			$scope.dome = new dome();
@@ -221,6 +226,7 @@
 				this.url = "http://list.mogujie.com/search?cKey=h5-shopping&fcid=&pid=9750&searchTag=&sort=pop&page=1&ratio=3%3A4&_version=1&_=" + this.page + "&callback=JSON_CALLBACK"
 			};
 			dome.prototype.data = function(){
+				
 				if(this.btn){
 					return
 				}else{
@@ -242,6 +248,7 @@
 	<script type="text/javascript">
 		window.onload=function(){
 			$(function(){
+				
 				var mySwiper = new Swiper('.swiper-container', {
 					autoplay: 3000,
 					loop: true,

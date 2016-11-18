@@ -313,15 +313,15 @@
 			猜你喜欢
 		</div>
 	</div>
-<div class="box4" infinite-scroll="dome.data()" infinite-scroll-distance="1" infinite-scroll-disabled="dome.btn">
+<div class="box4" infinite-scroll="dome.data()" infinite-scroll-distance="2" infinite-scroll-disabled="dome.btn">
 	<div class="shop" ng-repeat="x in dome.shop">
 		<a href="javascript:;">
-			<img src="{{x.img}}" class="shopimg"/>
+			<img data-ui-lazyload="{{x.img}}" class="shopimg lazy"/>
 			<div class="info">
 				<div class="tops">
 					<p class="titles">{{x.title}}</p>
 					<div class="tag" ng-if="x.leftbottom_taglist.length>0">
-						<img src="{{y}}" ng-repeat="y in x.leftbottom_taglist"/>
+						<img data-original="{{y}}" ng-repeat="y in x.leftbottom_taglist" class="lazy"/>
 					</div>
 				</div>
 				<div>
