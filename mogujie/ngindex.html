@@ -125,7 +125,7 @@
 				}
 			}
 			//头部尾部以及首页部分图片
-			$http.jsonp("http://mce.mogucdn.com/jsonp/multiget/3?pids=7356%2C3756%2C3093%2C4746%2C4604&callback=JSON_CALLBACK")
+			$http.jsonp("https://mce.mogucdn.com/jsonp/multiget/3?pids=7356%2C3756%2C3093%2C4746%2C4604&callback=JSON_CALLBACK")
 				.success(function(repson) {
 					$scope.bg = repson.data["7356"].list[0].bg;
 					$scope.footer = repson.data["4604"].list;
@@ -167,7 +167,7 @@
 		//首页控制器
 		app.controller("homectrl",function($scope,$timeout,$http,dome){
 			$scope.dome = new dome();//首页商品以及瀑布流			
-			$http.jsonp("http://mce.mogucdn.com/jsonp/multiget/3?pids=7356%2C3756%2C3093%2C4746%2C4604&callback=JSON_CALLBACK")
+			$http.jsonp("https://mce.mogucdn.com/jsonp/multiget/3?pids=7356%2C3756%2C3093%2C4746%2C4604&callback=JSON_CALLBACK")
 				.success(function(repson) {
 					$scope.swiper = repson.data["3756"].list;
 					$scope.box2 = repson.data["3093"].list;
@@ -176,7 +176,7 @@
 		})
 //		良品页控制器
 		app.controller("nicectrl",function($scope,$http,$interval,dome){
-			$http.jsonp("http://mce.mogucdn.com/jsonp/multiget/3?pids=7290%2C8927%2C7286%2C11295%2C11303%2C4604&callback=JSON_CALLBACK")
+			$http.jsonp("https://mce.mogucdn.com/jsonp/multiget/3?pids=7290%2C8927%2C7286%2C11295%2C11303%2C4604&callback=JSON_CALLBACK")
 			.success(function(repson){
 				$scope.swiper = repson.data["7290"].list;
 				$scope.kill = repson.data["8927"].list[0];
@@ -202,12 +202,12 @@
 					}
 					if($scope.houre == 0&& $scope.mint == 0&& $scope.sec == 0){
 						$scope.dome = new dome();
-						$scope.dome.url = "http://list.mogujie.com/search?cKey=h5-quality&fcid=&pid=7626&searchTag=&sort=pop&page=1&ratio=3%3A4&_version=1&_="+ dome.page +"&callback=JSON_CALLBACK"
+						$scope.dome.url = "https://list.mogujie.com/search?cKey=h5-quality&fcid=&pid=7626&searchTag=&sort=pop&page=1&ratio=3%3A4&_version=1&_="+ dome.page +"&callback=JSON_CALLBACK"
 					}
 				},1000)	
 			})
 			$scope.dome = new dome();
-			$scope.dome.url = "http://list.mogujie.com/search?cKey=h5-quality&fcid=&pid=7626&searchTag=&sort=pop&page=1&ratio=3%3A4&_version=1&_="+ dome.page +"&callback=JSON_CALLBACK"
+			$scope.dome.url = "https://list.mogujie.com/search?cKey=h5-quality&fcid=&pid=7626&searchTag=&sort=pop&page=1&ratio=3%3A4&_version=1&_="+ dome.page +"&callback=JSON_CALLBACK"
 		})
 //		类型页控制器
 //		app.controller("typectrl",function($scope){
@@ -223,7 +223,7 @@
 				this.shop = [];
 				this.btn = false;
 				this.page = Math.ceil(Math.random() * 10000000000000);
-				this.url = "http://list.mogujie.com/search?cKey=h5-shopping&fcid=&pid=9750&searchTag=&sort=pop&page=1&ratio=3%3A4&_version=1&_=" + this.page + "&callback=JSON_CALLBACK"
+				this.url = "https://list.mogujie.com/search?cKey=h5-shopping&fcid=&pid=9750&searchTag=&sort=pop&page=1&ratio=3%3A4&_version=1&_=" + this.page + "&callback=JSON_CALLBACK"
 			};
 			dome.prototype.data = function(){
 				
