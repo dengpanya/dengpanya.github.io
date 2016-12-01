@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>注册</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body,html{
+			font-family: "微软雅黑";
+			width: 100%;
+			height: 100%;
+			background: #fefcfd;
+		}
+		html{
+			font-size: 15.625vw;
+		}
+		img {
+			border: 0;
+			vertical-align: bottom;
+		}
+		a{
+			text-decoration: none;
+		}	
+		li{
+			list-style: none;
+		}
+		#container{
+			height: 100%;
+			display: flex;
+			overflow: hidden;
+			flex-direction: column;
+		}
+		#header {
+			width: 100%;
+			height: 0.86rem;
+			border-top: 1px solid #acaaab;
+			border-bottom: 1px solid #707070;
+			background: #e43669;
+			font-size: 0.39rem;
+			line-height: 0.86rem;
+			color: white;
+			text-align: center;
+			position: relative;
+		}
+		
+		#header img{
+			width: 0.51rem;
+			height: 0.34rem;
+			position: absolute;
+			top:0.29rem;
+			left:0.2rem ;
+		}
+		
+		#header button{
+			height: 0.55rem;
+			width: 1.1rem;
+			font-size: 0.24rem;
+			color: white;
+			border: none;
+			background: #dc1c58;
+			border-radius: 0.08rem;
+			box-shadow: 0 0 3px white;
+			position: absolute;
+			top:0.15rem;
+			right: 0.12rem;
+		}
+		section {
+			width: 100%;
+			flex: 1;
+			overflow-y: auto;
+			background: #f7f7f7;
+			border-top: 1px solid #636363;
+			border-bottom: 1px solid #aaa;
+			position: relative;
+			font-size: 0.23rem;
+		}
+
+		section input{
+			border: none;
+			outline: none;
+			width: 5.59rem;
+			height: 0.78rem;
+			margin-left: 0.4rem;
+			border-radius: 0.11rem;
+			text-indent: 0.25rem;
+			color: #a49b96;
+			font-size: 0.34rem;
+		}	
+		
+		section p{
+			margin-left: 0.4rem;
+			text-indent: 0.25rem;
+			color: #a49b96;
+		}
+		
+		section p:nth-of-type(1){
+			height:0.61rem;
+			line-height: 0.61rem;
+		}
+		section p:nth-of-type(2){
+			height:0.55rem;
+			line-height: 0.55rem;
+		}
+		section p:nth-of-type(3){
+			height:0.48rem;
+			line-height: 0.48rem;
+		}
+		section input:nth-of-type(4){
+			width: 5.6rem;
+			height: 0.9rem;
+			font-size: 0.34rem;
+			margin-top:0.43rem;
+			color: white;
+			background: url("img/btn.png");
+			background-size: cover;
+		}
+		
+		
+		
+		#footer{
+			width: 100%;
+			height: 0.96rem;
+			background: #484850;
+			display: flex;
+		}
+		#footer div{
+			width: 20%;
+			height: 0.96rem;
+			font-size: 0.24rem;
+			text-align: center;
+			color: #fefefe;
+			box-sizing: border-box;
+		}
+		#footer div:nth-of-type(4){
+			border-top: 2px solid #e5376c;
+		}
+		#footer div:nth-of-type(1) img{
+			width: 0.48rem;
+			height: 0.48rem;
+			margin-top: 0.08rem;
+			margin-bottom: 0.11rem;
+		}
+		#footer div:nth-of-type(2) img{
+			width: 0.44rem;
+			height: 0.38rem;
+			margin-top: 0.18rem;
+			margin-bottom: 0.1rem;	
+		}
+		#footer div:nth-of-type(3) img{
+			width: 0.48rem;
+			height: 0.42rem;
+			margin-top: 0.15rem;
+			margin-bottom: 0.09rem;
+		}
+		#footer div:nth-of-type(4) img{
+			width: 0.47rem;
+			height: 0.42rem;
+			margin-top: 0.1rem;
+			margin-bottom: 0.11rem;
+		}
+		#footer div:nth-of-type(5) img{
+			width: 0.46rem;
+			height: 0.12rem;
+			margin-top: 0.33rem;
+			margin-bottom: 0.21rem;
+		}
+		
+		
+				
+		</style>
+	</head>
+
+	<body>
+		<div id="container">
+			<div id="header">
+				<img src="img/jiantou.png"/>
+				<p>注册</p>
+				<a href="land.html"><button>登录</button></a>
+			</div>
+			<section>
+				<p class="name"></p>
+				<input type="text" placeholder="账号" id="name"/>
+				<p class="pas"></p>
+				<input type="password" placeholder="密码" id="pas"/>
+				<p class="rep"></p>
+				<input type="password" placeholder="重复密码" id="rep" />
+				<input type="button" value="同意服务协议并注册" id="submit"/>
+			</section>
+			<div id="footer">
+				<div><a href="index.html" style="color:white;"><img src="img/f1.png"/><p>首页</p></a></div>
+				<div><a href="type.html" style="color:white;"><img src="img/f2.png"/><p>分类</p></a></div>
+				<div><a href="buycar.html" style="color:white;"><img src="img/f3.png"/><p>购物车</p></a></div>
+				<div><a href="myshow.html" style="color:white;"><img src="img/f4.png"/><p>我的秀</p></a></div>
+				<div><a href="more.html" style="color:white;"><img src="img/f5.png"/><p>更多</p></a></div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		window.onload=function(){
+			$(function(){
+				var index = null;
+				var reg = /^[1][358][0-9]{9}$/;
+				var reg1 = /^\w{6,16}$/;
+				
+				if(localStorage.getItem("name") == null){
+					var name =[];
+					var word =[];
+				}else{
+					var name=localStorage.getItem("name").split(",");
+					var word=localStorage.getItem("word").split(",");
+				}
+				
+				$("section input").focus(function(){
+					index = $("section input").index(this);
+					switch(index)
+					{
+						case 0:$("section p").eq(index).text("请使用11位手机号注册。"); break;
+						case 1:$("section p").eq(index).text("请设置6-16位(数字，字母，下划线)作为密码。"); break;
+						case 2:$("section p").eq(index).text("请重复密码。"); break;
+						default:;
+					}
+				})
+				
+				$("#name").blur(function(){
+					for(var i=0;i<name.length;i++){
+						if(name[i]==$("#name").val()){
+							$(".name").css({color:"red"}).text("手机号已被注册!");
+							return;
+						}
+					}
+					if($("#name").val()==""){
+						$(".name").css({color:"#a49b96"}).text("");
+					}else if(!reg.test($("#name").val())){
+						$(".name").css({color:"red"}).text("手机格式有误!");
+						$("#name").focus(function(){
+							$(".name").css({color:"#a49b96"}).text("");
+						})
+					}else{
+						$(".name").css({color:"green"}).text("用户名可以使用~");
+					}
+				})
+				
+				$("#pas").blur(function(){
+					if($("#pas").val()==""){
+						$(".pas").css({color:"#a49b96"}).text("");
+					}else if(!reg1.test($("#pas").val())){
+						$(".pas").css({color:"red"}).text("密码格式有误!");
+						$("#pas").focus(function(){
+							$(".pas").css({color:"#a49b96"}).text("");
+						})
+					}else{
+						$(".pas").css({color:"green"}).text("密码可以使用~");
+					}
+				})
+				
+				$("#rep").blur(function(){
+					if($("#rep").val()==""){
+						$(".rep").css({color:"#a49b96"}).text("");
+					}else if($("#pas").val() != $("#rep").val()){
+						$(".rep").css({color:"red"}).text("两次密码不一致!");
+						$("#rep").focus(function(){
+							$(".rep").css({color:"#a49b96"}).text("");
+						})
+					}else{
+						$(".rep").css({color:"green"}).text("密码正确~");
+					}
+				})
+				
+				$("#submit").click(function(){
+					if($("#name").val() == ""){
+						$(".name").css({color:"red"}).text("用户名不能为空!");
+						return;
+					}
+					if($("#pas").val() == ""){
+						$(".pas").css({color:"red"}).text("密码不能为空!");
+						return;
+					}
+					if($("#rep").val() == ""){
+						$(".rep").css({color:"red"}).text("两次密码不一致!");
+						return;
+					}
+					name.push($("#name").val());
+					word.push($("#pas").val());
+					localStorage.setItem("name",name);
+					localStorage.setItem("word",word);
+					location.href="land.html"
+				})
+				
+			})
+		}
+	</script>
+</html>

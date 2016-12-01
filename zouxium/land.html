@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>登录</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body,html{
+			font-family: "微软雅黑";
+			width: 100%;
+			height: 100%;
+			background: #fefcfd;
+		}
+		html{
+			font-size: 15.625vw;
+		}
+		img {
+			border: 0;
+			vertical-align: bottom;
+		}
+		a{
+			text-decoration: none;
+		}	
+		li{
+			list-style: none;
+		}
+		#container{
+			height: 100%;
+			display: flex;
+			overflow: hidden;
+			flex-direction: column;
+		}
+		#header {
+			width: 100%;
+			height: 0.86rem;
+			border-top: 1px solid #acaaab;
+			border-bottom: 1px solid #707070;
+			background: #e43669;
+			font-size: 0.39rem;
+			line-height: 0.86rem;
+			color: white;
+			text-align: center;
+			position: relative;
+		}
+		
+		#header img{
+			width: 0.51rem;
+			height: 0.34rem;
+			position: absolute;
+			top:0.29rem;
+			left:0.2rem ;
+		}
+		
+		#header button{
+			height: 0.55rem;
+			width: 1.1rem;
+			font-size: 0.24rem;
+			color: white;
+			border: none;
+			background: #dc1c58;
+			border-radius: 0.08rem;
+			box-shadow: 0 0 3px white;
+			position: absolute;
+			top:0.15rem;
+			right: 0.12rem;
+		}
+		section {
+			width: 100%;
+			flex: 1;
+			overflow-y: auto;
+			background: #f7f7f7;
+			border-top: 1px solid #636363;
+			border-bottom: 1px solid #aaa;
+			position: relative;
+			font-size: 0.23rem;
+		}
+
+		section input{
+			border: none;
+			outline: none;
+			width: 5.59rem;
+			height: 0.78rem;
+			margin-left: 0.4rem;
+			border-radius: 0.11rem;
+			text-indent: 0.25rem;
+			color: #a49b96;
+			font-size: 0.34rem;
+		}	
+		section p{
+			margin-left: 0.4rem;
+			text-indent: 0.25rem;
+			color: #a49b96;
+		}
+		section p:nth-of-type(1){
+			height:0.61rem;
+			line-height:0.61rem;
+		}
+		section p:nth-of-type(2){
+			height:0.55rem;
+			line-height:0.55rem;
+		}
+		section input:nth-of-type(3){
+			width: 0.29rem;
+			height: 0.29rem;
+			border: 0.01rem solid #bcbcbc;
+			margin:0.43rem 0 0 0.58rem;
+			color: #e8356c;
+		}
+		section input:nth-of-type(4){
+			width: 5.6rem;
+			height: 0.9rem;
+			font-size: 0.34rem;
+			margin-top:0.43rem;
+			color: white;
+			background: url("img/btn.png");
+			background-size: cover;
+		}
+		
+		section span{
+			display: inline-block;
+			color: #717171;
+			margin: 0 0.5rem 0 0.14rem;
+		}
+		
+		section a{
+			text-decoration: underline;
+			color: #9d9d9d;
+		}
+		
+		
+		
+		#footer{
+			width: 100%;
+			height: 0.96rem;
+			background: #484850;
+			display: flex;
+		}
+		#footer div{
+			width: 20%;
+			height: 0.96rem;
+			font-size: 0.24rem;
+			text-align: center;
+			color: #fefefe;
+			box-sizing: border-box;
+		}
+		#footer div:nth-of-type(4){
+			border-top: 2px solid #e5376c;
+		}
+		#footer div:nth-of-type(1) img{
+			width: 0.48rem;
+			height: 0.48rem;
+			margin-top: 0.08rem;
+			margin-bottom: 0.11rem;
+		}
+		#footer div:nth-of-type(2) img{
+			width: 0.44rem;
+			height: 0.38rem;
+			margin-top: 0.18rem;
+			margin-bottom: 0.1rem;	
+		}
+		#footer div:nth-of-type(3) img{
+			width: 0.48rem;
+			height: 0.42rem;
+			margin-top: 0.15rem;
+			margin-bottom: 0.09rem;
+		}
+		#footer div:nth-of-type(4) img{
+			width: 0.47rem;
+			height: 0.42rem;
+			margin-top: 0.1rem;
+			margin-bottom: 0.11rem;
+		}
+		#footer div:nth-of-type(5) img{
+			width: 0.46rem;
+			height: 0.12rem;
+			margin-top: 0.33rem;
+			margin-bottom: 0.21rem;
+		}
+		
+		
+				
+		</style>
+	</head>
+
+	<body>
+		<div id="container">
+			<div id="header">
+				<img src="img/jiantou.png"/>
+				<p>登录</p>
+				<a href="enroll.html"><button>注册</button></a>
+			</div>
+			<section>
+				<p class="name"></p>
+				<input type="text" placeholder="账号" id="name"/>
+				<p class="pas"></p>
+				<input type="password" placeholder="密码" id="pas"/>
+				<input type="checkbox"/><span>记住密码</span><a href="javascript:;">忘记密码？</a>
+				<input type="button" value="登录" id="submit"/>
+			</section>
+			<div id="footer">
+				<div><a href="index.html" style="color:white;"><img src="img/f1.png"/><p>首页</p></a></div>
+				<div><a href="type.html" style="color:white;"><img src="img/f2.png"/><p>分类</p></a></div>
+				<div><a href="buycar.html" style="color:white;"><img src="img/f3.png"/><p>购物车</p></a></div>
+				<div><a href="myshow.html" style="color:white;"><img src="img/f4.png"/><p>我的秀</p></a></div>
+				<div><a href="more.html" style="color:white;"><img src="img/f5.png"/><p>更多</p></a></div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		window.onload=function(){
+			$(function(){
+				var btn=false;
+				var index=0;
+				if(localStorage.getItem("name") == null){
+					var name =[];
+					var word =[];
+				}else{
+					var name=localStorage.getItem("name").split(",");
+					var word=localStorage.getItem("word").split(",");
+				}
+				
+				$("#submit").click(function(){
+					for (var i=0;i<name.length;i++) {
+						if(name[i]==$("#name").val()){
+							btn=true;
+							index=i;
+						}
+					}
+					if(btn==false){
+						$(".name").css({color:"red"}).text("账号错误!")
+					}
+					if(btn==true){
+						if(word[index]==$("#pas").val()){
+							location.href="myshow.html"
+						}
+					}
+				})
+			})
+		}
+	</script>
+</html>

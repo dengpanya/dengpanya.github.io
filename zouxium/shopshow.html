@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>购物车</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/swiper-3.3.1.jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="js/swiper-3.3.1.min.css"/>
+		<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body,html{
+			font-family: "微软雅黑";
+			width: 100%;
+			height: 100%;
+			background: #fefcfd;
+		}
+		html{
+			font-size: 15.625vw;
+		}
+		img {
+			border: 0;
+			vertical-align: bottom;
+		}
+		a{
+			text-decoration: none;
+		}	
+		li{
+			list-style: none;
+		}
+		#container{
+			height: 100%;
+			display: flex;
+			overflow: hidden;
+			flex-direction: column;
+		}
+		#header {
+			width: 100%;
+			height: 0.86rem;
+			border-top: 1px solid #acaaab;
+			border-bottom: 1px solid #707070;
+			background: #e43669;
+			font-size: 0.39rem;
+			line-height: 0.86rem;
+			color: white;
+			text-align: center;
+			position: relative;
+		}
+		
+		#header img{
+			width: 0.51rem;
+			height: 0.34rem;
+			position: absolute;
+			top:0.29rem;
+			left:0.2rem ;
+		}
+		
+		#header button{
+			height: 0.55rem;
+			width: 1.1rem;
+			font-size: 0.24rem;
+			color: white;
+			border: none;
+			background: #dc1c58;
+			border-radius: 0.08rem;
+			box-shadow: 0 0 3px white;
+			position: absolute;
+			top:0.15rem;
+			right: 0.12rem;
+		}
+		section {
+			width: 100%;
+			flex: 1;
+			overflow-y: auto;
+			border-top: 1px solid #636363;
+			border-bottom: 1px solid #aaa;
+			position: relative;
+		}
+		
+		.swiper-container,.swiper-slide{
+			width: 100%;
+			height: 100%;
+		}
+		.swiper-slide img{
+			width: 100%;
+			height:100%
+		}
+		
+		#footer{
+			width: 100%;
+			height: 0.98rem;
+			background: url("img/bottom.png");
+			background-size: 0.02rem 0.97rem;
+			display: flex;
+		}
+		
+		#footer div{
+			width: 0.97rem;
+			width: 2.12rem;
+			border-top: 0.01rem solid #282828;
+			border-right: 0.01rem solid #282828;
+			color: white;
+			font-size: 0.35rem;
+			text-align:center;
+			line-height: 0.97rem;
+		}
+		#footer div:nth-of-type(3){
+			border-right: none;
+			border-top: 0.05rem solid #e43669;
+		}
+		
+		
+		
+				
+		</style>
+	</head>
+
+	<body>
+		<div id="container">
+			<div id="header">
+				<img src="img/jiantou.png"/>
+				<p>商品详情</p>
+				<button>分享</button>
+			</div>
+			<section>
+				<div class="swiper-container">
+  					<div class="swiper-wrapper">
+    					<div class="swiper-slide"><img src="img/xiang1.png"/></div>
+    					<div class="swiper-slide"><img src="img/xiang2.png"/></div>
+    					<div class="swiper-slide"><img src="img/xiang3.png"/></div>
+    					<div class="swiper-slide"><img src="img/xiang4.png"/></div>
+  					</div>
+				</div>
+			</section>
+			<div id="footer">
+				<a href="shop.html"><div>介绍</div></a>
+				<a href="introduce.html"><div>详情</div></a>
+				<a href="shopshow.html"><div>实拍</div></a>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		window.onload=function(){
+			$(function(){
+				var mySwiper = new Swiper('.swiper-container', {
+					loop:true,
+				})		
+  			}) 	
+		}
+	</script>
+</html>

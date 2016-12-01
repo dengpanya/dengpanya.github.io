@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>首页</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/swiper-3.3.1.jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="js/swiper-3.3.1.min.css" />
+		<script src="js/iscroll.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		
+		body,
+		html {
+			font-family: "微软雅黑";
+			width: 100%;
+			height: 100%;
+			background: #fefcfd;
+		}
+		
+		html {
+			font-size: 15.625vw;
+		}
+		
+		img {
+			border: 0;
+			vertical-align: bottom;
+		}
+		
+		a {
+			text-decoration: none;
+		}
+		
+		li {
+			list-style: none;
+		}
+		
+		#container {
+			height: 100%;
+			display: flex;
+			overflow: hidden;
+			flex-direction: column;
+		}
+		
+		#header {
+			width: 100%;
+			height: 0.86rem;
+			border-top: 1px solid #acaaab;
+			border-bottom: 1px solid #707070;
+			background: #e43669;
+			font-size: 0.39rem;
+			line-height: 0.86rem;
+			color: white;
+			text-align: center;
+		}
+		
+		#nav {
+			width: 100%;
+			height: 0.86rem;
+			border-top: 1px solid #acaaab;
+			border-bottom: 1px solid #707070;
+			background: #333;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			color: white;
+			font-size: 0.23rem;
+		}
+		
+		#nav input {
+			width: 5.9rem;
+			height: 0.56rem;
+			outline: none;
+			font-size: 0.23rem;
+			color: #959597;
+			border: 0;
+			border-radius: 0.24rem;
+			text-indent: 0.74rem;
+			background: white url(img/zouxiu.png) no-repeat 0.27rem 0.12rem;
+			background-size: 0.34rem 0.38rem;
+		}
+		
+		section {
+			flex: 1;
+			overflow-y: auto;
+		}
+		
+		.swiper-container,
+		.swiper-slide {
+			width: 100%;
+		}
+		
+		.swiper-slide img {
+			width: 100%;
+			height: 2.5rem;
+		}
+		
+		.shop {
+			width: 100%;
+			height: 2.19rem;
+			border-top: 1px solid #acaaab;
+			border-bottom: 1px solid #707070;
+			display: flex;
+			align-items: center;
+			position: relative;
+		}
+		
+		.shop img {
+			border: 1px solid #c8c8c8;
+			margin-left: 0.15rem;
+			width: 1.72rem;
+			height: 1.72rem;
+		}
+		
+		.shop div {
+			margin-left: 0.16rem;
+			height: 1.74rem;
+		}
+		
+		.shop p {
+			width: 3.97rem;
+			font-size: 0.24rem;
+			margin-top: 0.14rem;
+		}
+		
+		.shop strong {
+			font-size: 0.29rem;
+			color: #f62974;
+			margin-right: 0.15rem;
+		}
+		
+		.shop del {
+			color: #bcbabb;
+			font-size: 0.2rem;
+		}
+		
+		.shop p:nth-child(3) {
+			margin-top: 0.16rem;
+			font-size: 0.24rem;
+		}
+		
+		.shop p:nth-child(4) {
+			font-size: 0.24rem;
+		}
+		
+		.shop div img {
+			border: 0;
+			outline: none;
+			width: 1.18rem;
+			height: 0.52rem;
+			position: absolute;
+			top: 1.31rem;
+			left: 4.69rem;
+		}
+		
+		#footer {
+			width: 100%;
+			height: 0.96rem;
+			background: #484850;
+			display: flex;
+		}
+		
+		#footer div {
+			width: 20%;
+			height: 0.96rem;
+			font-size: 0.24rem;
+			text-align: center;
+			color: #fefefe;
+			box-sizing: border-box;
+		}
+		
+		#footer div:nth-child(1) {
+			border-top: 2px solid #e5376c;
+		}
+		
+		#footer div:nth-of-type(1) img {
+			width: 0.48rem;
+			height: 0.48rem;
+			margin-top: 0.05rem;
+			margin-bottom: 0.11rem;
+		}
+		
+		#footer div:nth-of-type(2) img {
+			width: 0.44rem;
+			height: 0.38rem;
+			margin-top: 0.18rem;
+			margin-bottom: 0.1rem;
+		}
+		
+		#footer div:nth-of-type(3) img {
+			width: 0.48rem;
+			height: 0.42rem;
+			margin-top: 0.15rem;
+			margin-bottom: 0.09rem;
+		}
+		
+		#footer div:nth-of-type(4) img {
+			width: 0.47rem;
+			height: 0.42rem;
+			margin-top: 0.13rem;
+			margin-bottom: 0.11rem;
+		}
+		
+		#footer div:nth-of-type(5) img {
+			width: 0.46rem;
+			height: 0.12rem;
+			margin-top: 0.33rem;
+			margin-bottom: 0.21rem;
+		}
+	</style>
+
+	<body>
+		<div id="container">
+			<div id="header">ZXIU　走秀网</div>
+			<div id="nav">
+				<input type="text" id="search" placeholder="请输入搜索内容">
+			</div>
+			<div class="swiper-container">
+				<div class="swiper-wrapper"></div>
+				<div class="swiper-pagination"></div>
+			</div>
+			<section id="contain">
+				<div class="main">
+					<div class="down" style="width: 100%;height: 0.5rem;font-size: 0;text-align: center;"><img src="img/loading.gif" style="width: 0.5rem;height: 0.5rem;"/></div>
+					<div class="contain"></div>
+					<div class="up" style="width: 100%;height: 0.5rem;font-size: 0;text-align: center;"><img src="img/loading.gif" style="width: 0.5rem;height: 0.5rem;"/></div>
+				</div>
+			</section>
+			<div id="footer">
+				<div>
+					<a href="index.html" style="color:white;"><img src="img/f1.png" />
+						<p>首页</p>
+					</a>
+				</div>
+				<div>
+					<a href="type.html" style="color:white;"><img src="img/f2.png" />
+						<p>分类</p>
+					</a>
+				</div>
+				<div>
+					<a href="buycar.html" style="color:white;"><img src="img/f3.png" />
+						<p>购物车</p>
+					</a>
+				</div>
+				<div>
+					<a href="myshow.html" style="color:white;"><img src="img/f4.png" />
+						<p>我的秀</p>
+					</a>
+				</div>
+				<div>
+					<a href="more.html" style="color:white;"><img src="img/f5.png" />
+						<p>更多</p>
+					</a>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		window.onload = function() {
+			$(function() {
+				if(localStorage.getItem("image") == null) {
+					var img = [];
+					var name = [];
+					var price = [];
+					var num = [];
+				} else {
+					var img = localStorage.getItem("img").split();
+					var name = localStorage.getItem("name").split();
+					var price = localStorage.getItem("price").split();
+					var num = localStorage.getItem("num").split();
+				}
+				//点击 当前的加入购物车按钮
+				$(".add").click(function() {
+					var index = $(".add").index(this);
+					var bBtn = true;
+					if(img.length < 1) {
+						img.push($(".img").eq(index).attr('src'));
+						name.push($(".name").eq(index).text());
+						price.push($(".price").eq(index).text());
+						num.push(1);
+					} else {
+						for(var i = 0; i < img.length; i++) {
+							if(img[i] == $(".img").eq(index).attr('src')) {
+								bBtn = false;
+								num[i] = parseInt(num[i]) + 1;
+							}
+						}
+						if(bBtn == true) {
+							img.push($(".img").eq(index).attr('src'));
+							name.push($(".name").eq(index).text());
+							price.push($(".price").eq(index).text());
+							num.push(1);
+						}
+					}
+
+					localStorage.setItem("image", img);
+					localStorage.setItem("indrouce", name);
+					localStorage.setItem("price", price);
+					localStorage.setItem("number", num);
+
+				});
+
+				$.ajax({
+					url: "http://datainfo.duapp.com/shopdata/getGoods.php",
+					dataType: "jsonp",
+					success: function(data) {
+						var data = eval(data);
+						console.log(1);
+						data.forEach(function(v) {
+							if(v[5] == 0) {
+								var discount = v[4];
+							} else {
+								var discount = parseInt(v[4] / (v[5] / 10));
+							}
+							$(".contain").append('<div class="shop"><img src="' + v[3] + '" class="img" /><div><p class="name">' + v[2] + '</p><p><strong>￥</strong><strong class="price">' + v[4] + '</strong><del>￥' + discount + '</del></p><p>' + v[5] + '折</p><img src="img/add-car.png" class="add"/></div></div>')
+						})
+					}
+				});
+
+				$.ajax({
+					url: "http://datainfo.duapp.com/shopdata/getBanner.php",
+					dataType: "jsonp",
+					success: function(data) {
+						for(var i = 0; i < data.length; i++) {
+							$(".swiper-wrapper").append('<div class="swiper-slide"><img src="' + eval(data[i].goodsBenUrl)[0] + '"/></div>');
+						}
+						var mySwiper = new Swiper('.swiper-container', {
+							autoplay: 2000,
+							autoplayDisableOnInteraction: false,
+							pagination: '.swiper-pagination',
+							paginationClickable: true,
+							grabCursor: true,
+							loop: true,
+						})
+					}
+
+				});
+				
+//				var scroll = new IScroll('#contain', {
+//					hScrollbars:false,
+//					vScrollbars:false,
+//				})
+//				console.log(scroll)
+				
+
+
+//				$.ajax({
+//					url:"http://datainfo.duapp.com/shopdata/getGoods.php",
+//					dataType:"jsonp",
+//					data:{
+//						pageCode:0,
+//					},
+//					success:function(data){
+//						console.log(data)
+//					}
+//
+//				});
+
+			})
+
+		}
+	</script>
+
+</html>

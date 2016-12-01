@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>购物车</title>
+    <link href="../css/gouwuche.css" rel="stylesheet">
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/gouwuche.js"></script>
+    <script src="../js/jquery.cookie.js"></script>
+
+</head>
+<body>
+<div class="s_header rela s_shoppingLine">
+    <h1 class="s_logo">
+        <a href="javascript:;" title="走秀网 全球时尚 正品保证" class="rela">走秀网<b class="abso"></b></a>
+    </h1>
+    <div class="s_column abso">
+        <p class="s_mar">
+            <a title="在线客服">在线客服</a>
+            <span>客服热线(免长途费)：<b>400-888-4499</b></span>
+        </p>
+        <p>
+            <span id="loginZone">欢迎光临走秀网! xiu_1013523418955 &nbsp; <a href=""> [ 退出 ] </a> <a href="" title="我的走秀"> [
+                我的走秀 ] </a></span>
+            |
+            <a href="" target="_blank" title="帮助"> 帮助中心 </a>
+        </p>
+    </div>
+</div>
+<div class="my_shoppingCart">
+    <div class="shop_list">
+        <ul class="st_ul">
+            <li class="sli_bg"><span class="sli_on"></span>1.我的购物袋</li>
+            <li><span class="sli_of"></span>2.填写并核对订单信息</li>
+            <li><span class="sli_bg"></span>3.成功提交订单</li>
+        </ul>
+    </div>
+</div>
+<div class="wares_div" id="5">
+    <div style="display:none" class="boxx">
+        <table class="war_tab1" id="canBuyShoppingCartXiuClick">
+            <tbody class="neirong">
+            <tr>
+                <th style="color:black;background-color:#E3E3E3">
+                    <label style="padding:0 0 0 10px;">
+                        <input type="checkbox" class="checkall" id="goodsChecks" checked="true">&nbsp;全选
+                    </label>
+                </th>
+                <th style="color:black;background-color:#E3E3E3" colspan="2">商品</th>
+                <th style="color:black;background-color:#E3E3E3; width:120px;text-align:center;">购买价(元)</th>
+                <th style="color:black;background-color:#E3E3E3">
+                    <div class="xp_price" style="color:black;">小计(元)</div>
+                </th>
+                <th style="color:black;background-color:#E3E3E3">
+                    <div class="quantity_div" style="color:black;">数量</div>
+                </th>
+                <th style="color:black;background-color:#E3E3E3">
+                    <div class="op_div" style="color:black;">操作</div>
+                </th>
+            </tr>
+            </tbody>
+        </table>
+        <div class="cartbar">
+            <div class="cartbar_wrap">
+                <div class="carbar_cheall">
+                    <label>
+                        <input type="checkbox" id="allchekb" class="checkall" checked="checked">&nbsp;全选
+                    </label>
+                </div>
+                <div class="cartbar_opa">
+                    <a href="javascript:;" id="delgoods" class="delbtn">删除</a>
+                    <a href="javascript:;" id="cleargoods" class="delbtn">清除失效商品</a>
+                    <a href="javascript:;" id="addlike" class="delbtn">移至收藏夹</a>
+                </div>
+                <div class="cartbar_chego">
+                    已选商品<b id="checkCountNum">1</b>件
+                </div>
+                <div class="cartbar_totall">
+                    总计(<span>不含运费</span>)：<span class="cartbar_total_spn">
+							<span>¥&nbsp;
+								<span id="totalAmoutPrice">0.00</span>
+							</span>
+                    </span>
+                </div>
+                <input class="cartbar_pay cartbar_payok" id="toBalanceLink" style="cursor: pointer;" value="结算">
+            </div>
+        </div>
+        <div id="interestItems1">
+            <div class="set_far">
+                <h2 style="float:left;">
+                    <a class="on out" href="javascript:;" id="showModle1" style="outline:none">看看您收藏的商品<b></b></a>
+                </h2>
+                <h2 style="float:left;margin-left:70px;padding-top:5px;">
+                    您暂无收藏商品。
+                </h2>
+                <div style="clear:both;"></div>
+                <div class="tab_show">
+                    <div style="" id="showModle_22"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="shoppingCart">
+        <div style="margin-top:20px;height:90px;background:#F6F6F6;border:1px solid #d6d3d3;">
+            <img src="../img/nogoods.jpg" style="width:52px;height:57px;float:left;margin:17px 50px 7px 200px;">
+            <h2 class="war_h2" style="float:left;align:center;margin-top:25px;">购物袋暂没有商品，现在就去
+                <a href="" style="color:#FF6633;" class="blue">
+                    <span>挑选自己喜欢的商品</span>
+                </a> 。
+            </h2>
+        </div>
+        <div class="elements_list"></div>
+        <div id="interestItems">
+            <div class="set_far">
+                <h2 style="float:left;">
+                    <a class="on out" href="javascript:;" id="showModle" style="outline:none">看看您收藏的商品<b></b></a>
+                </h2>
+                <h2 style="float:left;margin-left:70px;padding-top:5px;">
+                    您暂无收藏商品。
+                </h2>
+                <div style="clear:both;"></div>
+                <div class="tab_show">
+                    <div style="" id="showModle_2"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="M_shopping">
+    <p>Copyright © 2008-2016 <a target="_blank" href="">Xiu.com</a>深圳走秀网络科技有限公司 版权所有 . <a href="">粤ICP备07502993号</a></p>
+</div>
+<div class="popupDiv" id="xiuTipBox" style="position: absolute; left: 895px; top: 165px;display: none" >
+    <div class="M_infoTop"></div>
+    <div class="M_infocontents">数量修改成功!</div>
+</div>
+</body>
+</html>

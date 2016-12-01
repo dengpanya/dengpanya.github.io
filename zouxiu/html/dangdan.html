@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>订单</title>
+    <link href="../css/gouwuche.css" rel="stylesheet">
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/dingdan.js"></script>
+    <script src="../js/jquery.cookie.js"></script>
+    <script src="../js/distpicker.data.js"></script>
+    <script src="../js/distpicker.js"></script>
+    <script src="../js/main.js"></script>
+</head>
+<body>
+<div class="s_header rela s_shoppingLine">
+    <h1 class="s_logo">
+        <a href="javascript:;" title="走秀网 全球时尚 正品保证" class="rela">走秀网<b class="abso"></b></a>
+    </h1>
+    <div class="s_column abso">
+        <p class="s_mar">
+            <a title="在线客服">在线客服</a>
+            <span>客服热线(免长途费)：<b>400-888-4499</b></span>
+        </p>
+        <p>
+            <span id="loginZone">欢迎光临走秀网! xiu_1013523418955 &nbsp; <a href=""> [ 退出 ] </a> <a href="" title="我的走秀"> [
+                我的走秀 ] </a></span>
+            |
+            <a href="" target="_blank" title="帮助"> 帮助中心 </a>
+        </p>
+    </div>
+</div>
+<div class="my_shoppingCart">
+    <div class="shop_list">
+        <ul class="st_ul">
+            <li class="sli_bg" style="background: #e2e2e2;color: #5b5b5b;">
+                <span class="sli_on" style="background-position: -88px -1px"></span>1.我的购物袋
+            </li>
+            <li style="background: #82bf38;color: #fff"><span class="sli_of" style="background-position: 0 0"></span>2.填写并核对订单信息
+            </li>
+            <li><span class="sli_bg"></span>3.成功提交订单</li>
+        </ul>
+    </div>
+</div>
+<div class="add_address">
+    <div style="color:#5B5B5B;background-color:#E3E3E3;font-size: 14px;line-height: 28px;padding:0px 0px 0px 5px;font-weight: bold;">
+        填写并核对订单信息
+    </div>
+    <h2 class="infoTitle">
+        收货人信息
+        <a href="javascript:;">
+            <span name="addressOper" id="addressOper"></span>
+        </a>
+    </h2>
+    <div>
+        <div class="address_show2">
+            <form id="createAddressForm">
+                <div class="address_div">
+                    <table class="add_table">
+                        <tbody>
+                        <tr>
+                            <th width="12%" style="text-align: right" scope="row">
+                                <span class="red">*</span>收货人姓名：
+                            </th>
+                            <td>
+                                <input type="text" value="" id="addressName" class="cor_iut">
+                                <span class="red"></span>
+                                <label class="cl"></label>
+                                <label id="nameError" class="red"></label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th style="text-align: right" scope="row">
+                                <span class="red">*</span>省份／直辖市：
+                            </th>
+                            <td class="form-inline">
+                                <table data-toggle="distpicker">
+                                    <tr>
+                                        <td class="form-group">
+                                            <select class="form-control" id="province1"></select>
+                                        </td>
+                                        <td class="form-group">
+                                            <select class="form-control" id="city1"></select>
+                                        </td>
+                                        <td class="form-group">
+                                            <select class="form-control" id="district1"></select>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="12%" style="text-align: right" scope="row"><span class="red">*</span>详细地址：</th>
+                            <td>
+                                <input type="text" value="" id="address" class="cor_iut">
+                                <span class="red"></span>
+                                <label class="cl">温馨提示:35个以内中文字符</label>
+                                <label class="red"></label>
+                                <br>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th style="text-align: right" scope="row">
+                                <span class="red">*</span>邮政编码：
+                            </th>
+                            <td>
+                                <input type="text" value="" id="zipIn" class="cor_iut">
+                                <span class="red"></span>
+                                <label class="cl"></label>
+                                <label class="red"></label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row" style="text-align: right">
+                                <span class="red">*</span>手机号码：
+                            </th>
+                            <td>
+                                <div>
+                                    <input type="text" value="" id="mobileIn" class="cor_iut">
+                                    <label class="red"></label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr id="idCard1">
+                            <td colspan="2">
+                                <span style="padding-left:30px;">您的订单包含海外商品，根据国家相关政策规定，凡购买海外商品需提供身份证信息</span>
+                            </td>
+                        </tr>
+                        <tr id="idCard2">
+                            <th width="13%" style="text-align: right" scope="row">收货人身份证号码：</th>
+                            <td>
+                                <input type="text" id="idNumber" value="" class="cor_iut">
+                                <span class="red"></span>
+                                <label class="cl">成功登记后将获得30元优惠卷</label>
+                                <label class="red"></label>
+                                <br>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">&nbsp;</th>
+                            <td>
+                                <input type="checkbox" value="" id="isDefault">设为默认
+                            </td>
+                        </tr>
+                        <tr>
+                            <th style="text-align: right" scope="row">注：</th>
+                            <td>如果收货人并非您本人，您可<a class="blue" href="javascript:;">点此添加订货人联系信息</a>。</td>
+                        </tr>
+
+                        <tr style="display:none;" id="indentagentTr">
+                            <th style="text-align: right" scope="row">订货人姓名：</th>
+                            <td>
+                                <input type="text" value="" id="bookerNameIn" class="cor_iut">
+                                &nbsp;&nbsp;&nbsp;订货人联系电话：
+                                <input type="text" value="" id="bookerPhoneIn" class="cor_iut">
+                                <label class="cl"></label>
+                                <label class="red"></label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <div style="padding-left:30px;" class="q_time">
+                                    <div class="isBut_Div">
+									<span style="margin-right:5px;">
+										<a style="font-weight: normal;" href="javascript:;" class="Lring_but"
+                                           id="createBt">确认收货人信息</a>
+									</span>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </form>
+        </div>
+
+    </div>
+    <h2 class="infoTitle" id="_infoTitle_id">
+        配送信息
+        <a><span id="distributionOper"></span></a>
+    </h2>
+    <div class="distribution_show2">
+        <div class="c_time">
+            <table width="100%">
+                <tbody>
+                <tr>
+                    <td width="40%" valign="top" style="padding-right:10px;">
+                        <table width="100%">
+                            <tbody>
+                            <tr class="distribution_tr">
+                                <td colspan="2">配送方式</td>
+                            </tr>
+                            <tr class="distribution_tr">
+                                <td>
+                                    <label>
+                                        <input type="radio" value="deliverMode_01" checked="checked">
+                                    </label>
+                                </td>
+                                <td>
+                                    <span>快递，全场满199元免运费!</span>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                    <td width="60%" valign="top">
+                        <table width="100%">
+                            <tbody>
+                            <tr class="distribution_tr">
+                                <td colspan="2">配送时间</td>
+                            </tr>
+                            <tr class="distribution_tr">
+                                <td width="50%">
+                                    <label>
+                                        <input type="radio" value="deliverTime_01" checked="checked" name="day">
+                                    </label>
+                                    <span>工作日、双休日与假日均可送货</span>
+                                </td>
+                                <td width="50%">
+                                    <label>
+                                        <input type="radio" value="deliverTime_02" name="day">
+                                    </label>
+                                    <span>只工作日送货(双休日、假日不用送)</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="50%">
+                                    <label>
+                                        <input type="radio" value="deliverTime_03" name="day">
+                                    </label>
+                                    <span>只双休日、假日送货(工作日不用送)</span>
+                                </td>
+                                <td width="50%">
+                                    <label>
+                                        <input type="radio" value="deliverTime_04" name="day">
+                                    </label>
+                                    <span>白天没人，尽量安排晚上送货</span>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <div class="q_time">
+                <div class="isBut_Div">
+                    <span style="margin-right:5px;">
+                        <a class="Lring_but" href="javascript:;" style="font-weight: normal;">确认配送信息</a>
+                    </span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="orderDetail_div" id="pay_method_div">
+        <h2 class="infoTitle" style="padding-left: 10px;">
+            支付方式
+			<span>
+				<a href="javascript:;"></a>
+			</span>
+        </h2>
+        <div id="pay_method_list" class="pay_div"
+             style="background-color: rgb(246, 246, 246); padding-bottom: 10px; height: 100%;">
+            <div>
+                <div style="color: red;">您也可以同时:</div>
+                <ul id="payTypeUL" style="margin: 8px 0px 0px 8px">
+                    <li>
+                        <label>
+                            <input type="checkbox" id="cardPayListID" value="GIFT_CARD">&nbsp;<strong> 用礼品卡冲抵金额</strong>
+                        </label>
+                    </li>
+                    <div class="unline"></div>
+                    <li>
+                        <label>
+                            <input id="onlineBtn" type="radio" name="paymethod" value="PAY_ONLINE" title="在线支付"
+                                   checked="checked">
+                            <strong>在线支付</strong>&nbsp;&nbsp;
+                            <font class="">即时到帐，支持绝大部分银行借记卡、信用卡和支付平台</font>&nbsp;&nbsp;
+                            <font style="color: red;"></font>
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="radio" name="paymethod" title="银行汇款" value="REMIT_BANK" id="REMIT_BANK_ID">
+                            <strong>银行汇款</strong>&nbsp;&nbsp;您需提交订单后再到银行把货款汇入走秀账户，
+                            <font style="color: red;">汇款成功后请联系客服告知汇款信息以便及时为您备货</font>，到账后将为您发货，到账时间1-5个工作日！
+                        </label>
+                        <div id="pay_bank_desc" class="hidden" style="display: none;">
+                            <table class="r_rondCur">
+                                <tbody>
+                                <tr>
+                                    <th>银行名称</th>
+                                    <th>开户行</th>
+                                    <th>开户名</th>
+                                    <th>银行账号</th>
+                                </tr>
+                                <tr>
+                                    <td>建设银行</td>
+                                    <td>建设银行深圳罗湖支行</td>
+                                    <td>深圳走秀网络科技有限公司</td>
+                                    <td>4420 1507 3000 5250 8967</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </li>
+
+                    <li id="is_cash"><label> <input id="cashBtn" type="radio" name="paymethod" value="COD"
+                                                    cat_code="PAY_COD" title="货到付款">
+                        <strong>货到付款</strong>&nbsp;&nbsp;先送货再收款，请您在快递人员送货时付款 </label>
+                    </li>
+                    <li style="margin-left: 15px;">
+                        <a style="font-weight: normal;" href="javascript:;" id="confirm_paymethod_btn" class="Lring_but"
+                           title="确认支付方式">确认支付方式</a>
+                        <span id="pay_discount_info"></span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="orderDetail_div" id="orderDetail_div">
+        <h2 class="infoTitle" style="padding-left: 10px;">商品清单
+            <span class="add">
+                <a href="gouwuche.html">[修改]</a>
+            </span>
+        </h2>
+        <div class="product_splist" id="div_product_splist">
+            <table style="background:white;" class="tab_list">
+                <tbody class="jia">
+                <tr>
+                    <th colspan="2" scope="col" style="border-left:1px solid #d6d3d3; ">商品</th>
+                    <th style="width: 140px;text-align:center;">走秀价</th>
+                    <th>
+                        <div class="sp2_xp_price">购买价</div>
+                    </th>
+                    <th>
+                        <div class="sp2_qt_div">数量</div>
+                    </th>
+                    <th scope="col" style="border-right:1px solid #d6d3d3; ">小计</th>
+                </tr>
+                </tbody>
+            </table>
+            <p style="border-bottom:1px dashed #7f7d7d; padding:5px 0; width:98%; margin:5px auto;clear:both"></p>
+            <table style="margin:0px 0px 20px 0px;width:100%;" class="">
+                <tbody>
+                <tr>
+                    <td width="73%" valign="top" id="td_couponList_iD">
+
+                    </td>
+                    <td valign="top">
+                        <table style="width:100%;">
+                            <tbody>
+                            <tr style="height:30px;">
+                                <td style="text-align:right;">商品总价：</td>
+                                <td style="text-align:left;">￥<span id="show_price_now"></span></td>
+                            </tr>
+                            <tr style="height:30px;">
+                                <td style="text-align:right;">优惠金额：</td>
+                                <td style="text-align:left;">
+                                    <span style="color: red;">￥</span><span id="offercash">
+                                    <font class="red" id="activityDiscountAmount">0</font></span>
+                                </td>
+                            </tr>
+                            <tr style="height:30px;">
+                                <td style="text-align:right;">运费：</td>
+                                <td style="text-align:left;">
+                                    ￥<span style="margin:0 0 0 0px;" id="cartPriceShip">0</span>
+                                </td>
+                            </tr>
+                            <tr style="height:30px;border-bottom:1px solid #D6D3D3;">
+                                <td style="text-align:right;">订单应付金额：</td>
+                                <td style="text-align:left;">
+                                    <span style="color:#FF6633;background:none;padding-left: 0px;font-weight:bold;">￥</span>
+                                    <span style="color:#FF6633;background:none;padding-left: 0px;font-weight:bold;"
+                                          id="totalAmount_str_id"></span>
+                                </td>
+                            </tr>
+                            <tr id="submit_order_ret_msg" style="height:15px;">
+                                <td style="text-align:right;"></td>
+                                <td style="text-align:left;"></td>
+                            </tr>
+                            <tr id="submit_order_li" style="height:30px;">
+                                <td style="text-align:right;"></td>
+                                <td style="text-align:left;">
+                                    <input type="submit" value="" class="sum_sure sum_btn">
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="M_shopping">
+    <p>Copyright © 2008-2016 <a target="_blank" href="">Xiu.com</a>深圳走秀网络科技有限公司 版权所有 . <a
+            href="">粤ICP备07502993号</a></p>
+</div>
+</body>
+</html>

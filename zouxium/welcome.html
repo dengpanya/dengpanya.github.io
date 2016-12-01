@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Welcome</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/swiper-3.3.1.jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="js/swiper-3.3.1.min.css"/>
+	</head>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		img{
+			vertical-align: bottom;
+		}
+		.swiper-container,.swiper-slide{
+			width: 100%;
+		}
+	</style>
+	<body>
+		<div class="wel"><img src="img/welcome.png"/></div>
+		<div class="swiper-container" style="display: none;">
+  			<div class="swiper-wrapper">
+    			<div class="swiper-slide"><img src="img/w1.png"/></div>
+    			<div class="swiper-slide"><img src="img/w2.png"/></div>
+    			<div class="swiper-slide"><img src="img/w3.png"/></div>
+    			<div class="swiper-slide" style="position: relative;">
+    				<a href="index.html" style="position: absolute;top: 74%;left: 28%;display: block;width: 45%;height: 10%;"></a><img src="img/w4.png"/>
+    			</div>
+  			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		window.onload=function(){
+			$(function(){
+				$("img").css({width:$(window).width(),height:$(window).height()});
+				setTimeout(function(){
+					$(".wel").fadeOut(1000);
+				},1000)
+				
+				setTimeout(function(){
+					$(".swiper-container").stop(true).fadeIn(1000);
+				},1000)
+				
+				setTimeout(function(){
+					var mySwiper = new Swiper('.swiper-container', {
+						grabCursor : true,
+						effect : 'fade',
+						fade: {
+ 							crossFade: true,
+						}
+  					}) 
+				},2000)
+  				
+			})
+		}
+	</script>
+</html>

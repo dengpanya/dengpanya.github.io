@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>我的秀</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body,html{
+			font-family: "微软雅黑";
+			width: 100%;
+			height: 100%;
+			background: #fefcfd;
+		}
+		html{
+			font-size: 15.625vw;
+		}
+		img {
+			border: 0;
+			vertical-align: bottom;
+		}
+		a{
+			text-decoration: none;
+		}	
+		li{
+			list-style: none;
+		}
+		#container{
+			height: 100%;
+			display: flex;
+			overflow: hidden;
+			flex-direction: column;
+		}
+		#header {
+			width: 100%;
+			height: 0.86rem;
+			border-top: 1px solid #acaaab;
+			border-bottom: 1px solid #707070;
+			background: #e43669;
+			font-size: 0.39rem;
+			line-height: 0.86rem;
+			color: white;
+			text-align: center;
+			position: relative;
+		}
+		
+		#header img{
+			width: 0.51rem;
+			height: 0.34rem;
+			position: absolute;
+			top:0.29rem;
+			left:0.2rem ;
+		}
+		section {
+			width: 100%;
+			flex: 1;
+			overflow-y: auto;
+			border-top: 1px solid #636363;
+			border-bottom: 1px solid #aaa;
+			background: #f7f7f7;
+		}
+		#top{
+			margin: 0.62rem 0 0 0.35rem;
+			display: flex;	
+			font-size: 0.24rem;
+		}
+		#top button:nth-of-type(1){
+			margin: 0 0.44rem 0 0.33rem;
+		}
+		
+		#top button{
+			background: url("img/btn.png");
+			background-size: cover;
+			color: white;
+			outline: none;
+			border: 0;
+			height: 0.53rem;
+			width: 1.08rem;
+			border-radius: 0.06rem;
+		}
+		
+		#top img{
+			width: 1.64rem;
+			height: 1.66rem;
+		}
+		#top p{
+			margin: 0.3rem 0 0.38rem 0.33rem;
+			font-size: 0.33rem;	
+		}
+		#bottom{
+			width: 5.55rem;
+			height: 3.59rem;
+			border: 2px solid #dedede;
+			font-size: 0.35rem;
+			border-radius: 0.16rem;
+			margin: 0.83rem 0 0 0.32rem;
+		}
+		#bottom div{
+			height: 0.88rem;
+			line-height: 0.88rem;
+			text-indent: 0.27rem;
+			border-bottom:2px solid #dedede;
+			position: relative;
+		}
+		#bottom div:nth-child(4){
+			border: none;
+		}
+		#bottom span{
+			line-height: 0;
+			position: absolute;
+			color: #aaaaaa;
+			top: 0.44rem;
+			right: 0.32rem;
+		}	
+
+		#footer{
+			width: 100%;
+			height: 0.96rem;
+			background: #484850;
+			display: flex;
+		}
+		#footer div{
+			width: 20%;
+			height: 0.96rem;
+			font-size: 0.24rem;
+			text-align: center;
+			color: #fefefe;
+			box-sizing: border-box;
+		}
+		#footer div:nth-child(4){
+			border-top: 2px solid #e5376c;
+		}
+		#footer div:nth-of-type(1) img{
+			width: 0.48rem;
+			height: 0.48rem;
+			margin-top: 0.08rem;
+			margin-bottom: 0.11rem;
+		}
+		#footer div:nth-of-type(2) img{
+			width: 0.44rem;
+			height: 0.38rem;
+			margin-top: 0.18rem;
+			margin-bottom: 0.1rem;	
+		}
+		#footer div:nth-of-type(3) img{
+			width: 0.48rem;
+			height: 0.42rem;
+			margin-top: 0.15rem;
+			margin-bottom: 0.09rem;
+		}
+		#footer div:nth-of-type(4) img{
+			width: 0.47rem;
+			height: 0.42rem;
+			margin-top: 0.1rem;
+			margin-bottom: 0.11rem;
+		}
+		#footer div:nth-of-type(5) img{
+			width: 0.46rem;
+			height: 0.12rem;
+			margin-top: 0.33rem;
+			margin-bottom: 0.21rem;
+		}
+		
+		
+				
+		</style>
+	</head>
+
+	<body>
+		<div id="container">
+			<div id="header">
+				<img src="img/jiantou.png"/>
+				<p>我的秀</p>
+			</div>
+			<section>
+				<div id="top">
+					<img src="img/my.png"/>
+					<div>
+						<p>昵称 : 未知</p>
+						<a href="land.html"><button>登录</button></a>
+						<a href="enroll.html"><button>注册</button></a>
+					</div>
+				</div>
+				<div id="bottom">
+					<div>我的订单<span>></span></div>
+					<div>我的优惠券<span>></span></div>
+					<div>浏览记录<span>></span></div>
+					<div>我的收藏<span>></span></div>
+				</div>
+			</section>
+			<div id="footer">
+				<div><a href="index.html" style="color:white;"><img src="img/f1.png"/><p>首页</p></a></div>
+				<div><a href="type.html" style="color:white;"><img src="img/f2.png"/><p>分类</p></a></div>
+				<div><a href="buycar.html" style="color:white;"><img src="img/f3.png"/><p>购物车</p></a></div>
+				<div><a href="myshow.html" style="color:white;"><img src="img/f4.png"/><p>我的秀</p></a></div>
+				<div><a href="more.html" style="color:white;"><img src="img/f5.png"/><p>更多</p></a></div>
+			</div>
+		</div>
+	</body>
+</html>

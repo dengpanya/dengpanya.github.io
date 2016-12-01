@@ -1,0 +1,542 @@
+body,ul,li,tr,tt,td.div,p,h1,h2,td,tt,tr,input,table,tbody,input,form{
+    margin: 0;
+    padding: 0;
+}
+a {
+    color: #5b5b5b;
+    text-decoration: none;
+}
+body {
+    background: #fff;
+    color: #5b5b5b;
+    font: 12px/1.5 tahoma, arial, 宋体, sans-serif;
+}
+ul, ol {
+    list-style-type: none;
+}
+.s_header {
+    width: 950px;
+    margin: 0 auto;
+    background: #fff;
+    height: 64px;
+    padding-top: 12px;
+    z-index: 99;
+    border-bottom: 1px solid #000
+}
+.s_header .s_logo {
+    height: 59px;
+    width: 194px;
+    margin-left: 13px;
+}
+.s_header .s_logo a {
+    height: 59px;
+    width: 194px;
+    overflow: hidden;
+    display: block;
+}
+.rela {
+    position: relative;
+}
+.abso {
+    position: absolute;
+}
+.s_header .s_logo b {
+    background: url("../img/s_05.png") no-repeat;
+    width: 194px;
+    height: 59px;
+    left: 0;
+    top: 0;
+}
+.s_header .s_column {
+    right: 10px;
+    top: 15px;
+    width: 600px;
+    text-align: right;
+    color: #151515;
+}
+.s_header .s_column .s_mar, .s_mar {
+    margin-bottom: 15px;
+}
+.s_header .s_column p {
+    height: 20px;
+    display: block;
+}
+.s_header .s_column .s_mar a, .s_mar a {
+    float: right;
+    padding: 0 10px;
+}
+.s_header .s_column {
+    right: 10px;
+    top: 15px;
+    width: 600px;
+    text-align: right;
+    color: #151515;
+}
+.s_header .s_column .s_mar b, .s_mar b {
+    font-size: 16px;
+    color: #F26521;
+    line-height: 18px;
+}
+.my_shoppingCart, .wares_div, .setted_d, .add_address, .indent_Not {
+    width: 950px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.shop_list {
+    height: 40px;
+    padding-top: 15px;
+}
+.shop_list .st_ul {
+    width: 950px;
+    height: 33px;
+    margin: 0 auto;
+}
+.shop_list .st_ul li {
+    float: left;
+    width: 316px;
+    background: #e2e2e2;
+    height: 24px;
+    text-align: center;
+    line-height: 24px;
+    font-size: 14px;
+    font-weight: bold;
+    _overflow: hidden;
+}
+.shop_list .st_ul .sli_bg {
+    background: #82bf38;
+    color: #fff;
+}
+.sli_on, .sli_of{
+    background: url("../img/s_shop1.gif") 0 0 no-repeat;
+    width: 27px;
+    height: 32px;
+    float: right;
+    overflow: hidden;
+    position: relative;
+    margin-top: -4px;
+}
+.sli_of {
+    background-position: -27px 0;
+}
+.my_shoppingCart, .wares_div, .setted_d, .add_address, .indent_Not {
+    width: 950px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+div.wares_div {
+    overflow: visible;
+}
+.wares_div .war_h2 {
+    font-size: 14px;
+    padding: 10px;
+    color: #000;
+}
+.pro a, .blue {
+     text-decoration: underline;
+}
+.elements_list {
+    width: 950px;
+    clear: both;
+    overflow: hidden;
+    margin-top: 12px;
+}
+.set_far {
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+.set_far h2 {
+    font-size: 12px;
+    height: 27px;
+}
+.set_far h2 a {
+    width: 171px;
+    height: 27px;
+    overflow: hidden;
+    position: relative;
+}
+.set_far h2 b, .set_far h2 a.on b {
+    width: 171px;
+    height: 27px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background:url("../img/s_shop1.gif") no-repeat 0 -289px;
+}
+.M_shopping {
+    color: #7D7D7D;
+    line-height: 22px;
+    margin: 15px auto 20px;
+    overflow: hidden;
+    text-align: center;
+    width: 950px;
+    border-top: 1px solid #999;
+    padding-top: 10px;
+}
+.war_tab1 {
+    width: 100%;
+    border: 1px solid #d6d3d3;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 2px;
+}
+tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+.war_tab1 tr th {
+    height: 32px;
+    text-align: center;
+    color: #fff;
+    font-weight: normal;
+}
+label {
+    cursor: default;
+}
+.war_tab1 input {
+    vertical-align: middle;
+    font: 12px/1.5 tahoma, arial, 宋体, sans-serif;
+}
+.item_checked {
+    background: #fff4e8;
+}
+.goodsitemb {
+    border-bottom: 1px solid #D6D3D3;
+}
+.war_tab1 td {
+    text-align: center;
+    line-height: 25px;
+    padding: 10px;
+}
+.war_tab1 td.chebox {
+    text-align: left;
+    padding-left: 15px;
+}
+.war_tab1 .txtl {
+    text-align: left;
+}
+.war_tab1 td.pricetd {
+    color: #000;
+}
+.xiuPrice {
+    color: #ff6633;
+    font-weight: bold;
+}
+.war_tab1 .at {
+    border: 1px solid #666;
+    height: 10px;
+    width: 10px;
+    overflow: hidden;
+    display: inline-block;
+    line-height: 8px;
+    margin-bottom: -3px;
+}
+.war_txt {
+    width: 30px;
+    border: 1px solid #dfdfdf;
+    margin: 0 10px;
+    text-align: center;
+}
+.cartbar {
+    height: 50px;
+    line-height: 50px;
+    border: 1px solid #d8d7d7;
+    background: #fff;
+    margin: 5px auto 0;
+}
+.cartbar_wrap {
+    width: 950px;
+    margin: 0 auto;
+}
+.cartbar_wrap .carbar_cheall {
+    float: left;
+    height: 18px;
+    line-height: 18px;
+    padding: 16px 0 16px 9px;
+    white-space: nowrap;
+}
+.cartbar_wrap .cartbar_opa {
+    float: left;
+    width: 300px;
+    height: 50px;
+    line-height: 50px;
+    position: relative;
+}
+.cartbar_wrap .cartbar_chego {
+    float: left;
+    width: 200px;
+    text-align: center;
+    margin-left: 30px;
+}
+.cartbar_wrap .cartbar_totall {
+    float: left;
+    width: 240px;
+}
+.cartbar_wrap .cartbar_opa a.delbtn {
+    display: inline-block;
+    height: 50px;
+    line-height: 50px;
+    padding: 0 15px;
+    margin-left: 15px;
+}
+.cartbar_wrap .cartbar_chego b {
+    margin: 0 5px;
+    color: #ea7515;
+}
+.cartbar_wrap .cartbar_totall span {
+    color: #a1a1a1;
+}
+.cartbar_wrap .cartbar_totall .cartbar_total_spn span {
+    color: #ea7515;
+    font-size: 20px;
+    font-weight: normal;
+}
+.cartbar_wrap .cartbar_pay {
+    float: right;
+    display: block;
+    width: 114px;
+    height: 50px;
+    line-height: 50px;
+    background: url("../img/cartbar_btn.jpg") no-repeat;
+    text-indent: -9999em;
+    overflow: hidden;
+    border: 0px;
+}
+.cartbar_wrap .cartbar_payok {
+    background-position: 0 -50px;
+}
+.M_infocontents {
+    background: url("../img/M_infoBg.gif") 0 0 repeat-y;
+    padding: 2px 10px;
+    width: 181px;
+    overflow: hidden;
+    text-align: left;
+    line-height: 18px;
+}
+
+
+.popupDiv {
+    background: url('../img/user_base_pop.gif') no-repeat -410px bottom;
+    padding-bottom: 16px;
+    width: 201px;
+    overflow: hidden;
+    color: #ff6600;
+}
+.M_infoTop {
+    background: url("../img/user_base_pop.gif") no-repeat -209px -95px;
+    height: 6px;
+    line-height: 6px;
+    width: 201px;
+    overflow: hidden;
+}
+
+
+
+
+
+
+.add_address {
+    background: #fff;
+    border: 2px solid #dcdcdc;
+    width: 948px;
+    margin: 0 auto;
+    overflow: hidden
+}
+h2.infoTitle {
+    padding: 12px 0px 0px 20px;
+    width: 908px;
+    margin: 0 auto;
+    color: #000000;
+    display: block;
+    font-size: 12px;
+    font-weight: bold;
+    height: 22px;
+    line-height: 22px;
+}
+h2.infoTitle a {
+    position: relative;
+    font-weight: normal;
+    margin-left: 6px;
+    cursor: pointer;
+    color: black;
+}
+.address_show2 {
+    background: #f6f6f6;
+    border-bottom: #dcdcdc 1px dashed;
+    overflow: auto;
+    clear: both;
+    width: 908px;
+    margin: 5px auto 4px auto;
+    padding: 5px 0 5px 0;
+}
+.address_show2 .address_div {
+    padding: 0!important;
+}
+.add_address .address_div .add_table {
+    width: 100%;
+    border-collapse: collapse;
+    border: none;
+    text-align: left;
+}
+tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+.address_div .add_table tr {
+    height: 31px;
+}
+.add_address .address_div .add_table th {
+    font-weight: normal;
+    padding: 5px;
+}
+.add_address .cor_iut {
+    border: 1px solid #b3b3b3;
+    height: 22px;
+    padding-left: 5px;
+}
+.red {
+    color: red;
+}
+.address_div .add_table select {
+    height: 24px;
+}
+option {
+    display: block;
+    white-space: pre;
+    min-height: 1.2em;
+    padding: 0px 2px 1px;
+}
+.isBut_Div {
+    height: 25px;
+    display: inline;
+    line-height: normal;
+}
+.isBut_Div span {
+    height: 25px;
+    float: left;
+    display: block;
+}
+.Lring_but {
+    height: 26px;
+    width: 113px;
+    line-height: 26px;
+    color: #fff;
+    text-align: center;
+    display: inline-block;
+    margin-right: 12px;
+    background: url("../img/all_b_style_bg.gif") 0 -293px no-repeat;
+}
+
+.isBut_Div .isbut_w {
+    background-position: right -370px;
+    padding-right: 5px;
+    line-height: normal;
+}
+
+.distribution_show2 {
+    background: #f6f6f6;
+    border-bottom: #dcdcdc 1px dashed;
+    overflow: auto;
+    clear: both;
+    width: 908px;
+    margin: 0 auto 4px auto;
+    padding: 12px 0 20px 0;
+}
+.add_address .distribution_show2 .c_time {
+    padding: 0 0 0 10px;
+}
+.add_address .distribution_show2 .distribution_tr {
+    line-height: 2.0;
+}
+.add_address .c_time label input, .add_address .pay_div label input {
+    vertical-align: middle;
+    margin-right: 5px;
+}
+.add_address .c_time .q_time {
+    height: 25px;
+    padding-left: 20px;
+}
+.orderDetail_div {
+    width: 908px;
+    margin: 0 auto;
+}
+.add_address .pay_div {
+    border-bottom: #dcdcdc 1px dashed;
+    overflow: auto;
+    clear: both;
+    padding: 0 0 0 10px;
+
+}
+#payTypeUL li {
+    clear: both;
+    padding-bottom: 10px;
+}
+.add_address .unline {
+    border-bottom: 1px dashed #7f7d7d;
+    margin-bottom: 5px;
+}
+.add_address .pay_div .unline {
+    width: 85%!important;
+}
+h2.infoTitle a {
+    position: relative;
+    font-weight: normal;
+    margin-left: 6px;
+    color: #F26521;
+    cursor: pointer;
+}
+.product_splist {
+    margin-top: 12px;
+}
+.add_address .tab_list {
+    width: 94%;
+    margin: 10px auto;
+}
+.add_address .tab_list th {
+    background: #efefef;
+    border-top: 1px solid #d6d3d3;
+    border-bottom: 1px solid #d6d3d3;
+    height: 22px;
+    line-height: 22px;
+    font-size: 12px;
+    font-weight: normal;
+}
+.sp2_xp_price {
+    width: 120px;
+}
+.sp2_qt_div {
+    width: 70px;
+}
+.add_address .tab_list td {
+    padding: 10px;
+    border-bottom: 1px solid #D6D3D3;
+    text-align: center;
+    line-height: 25px;
+}
+.add_address .tab_list td.tx_img {
+    text-align: right;
+}
+.add_address .tab_list td.tx_img img {
+    border: 1px solid #d5d2d2;
+    padding: 1px;
+    height: 55px;
+    width: 43px;
+}
+.add_address .tab_list td.txtl {
+    text-align: left;
+}
+.sum_sure {
+    width: 127px;
+    height: 30px;
+    border: none;
+    cursor: pointer;
+    background: url("../img/user_sprite.png") 0 -160px no-repeat;
+}

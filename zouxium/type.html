@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>分类</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/swiper-3.3.1.jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="js/swiper-3.3.1.min.css" />
+		<!--<link rel="stylesheet" type="text/css" href="font/iconfont.css"/>-->
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			body,
+			html {
+				font-family: "微软雅黑";
+				width: 100%;
+				height: 100%;
+				background: #fefcfd;
+			}
+			
+			html {
+				font-size: 15.625vw;
+			}
+			
+			img {
+				border: 0;
+				vertical-align: bottom;
+			}
+			
+			a {
+				text-decoration: none;
+			}
+			
+			@font-face {
+				font-family: "iconfont";
+				src: url('font/iconfont.eot');
+				/* IE9*/
+				src: url('font/iconfont.eot#iefix') format('embedded-opentype'), /* IE6-IE8 */
+				url('font/iconfont.woff') format('woff'), /* chrome, firefox */
+				url('font/iconfont.ttf') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+				url('font/iconfont.svg#iconfont') format('svg');
+				/* iOS 4.1- */
+			}
+			
+			.iconfont {
+				font-family: "iconfont" !important;
+				font-size: 0.31rem;
+				font-style: normal;
+				-webkit-font-smoothing: antialiased;
+				-webkit-text-stroke-width: 0.2px;
+				-moz-osx-font-smoothing: grayscale;
+			}
+			
+			li {
+				list-style: none;
+			}
+			
+			#container {
+				height: 100%;
+				display: flex;
+				overflow: hidden;
+				flex-direction: column;
+			}
+			
+			#header {
+				width: 100%;
+				height: 0.86rem;
+				border-top: 1px solid #acaaab;
+				border-bottom: 1px solid #707070;
+				background: #e43669;
+				font-size: 0.39rem;
+				line-height: 0.86rem;
+				color: white;
+				text-align: center;
+				position: relative;
+			}
+			
+			#header img {
+				width: 0.51rem;
+				height: 0.34rem;
+				position: absolute;
+				top: 0.29rem;
+				left: 0.2rem;
+			}
+			
+			section {
+				width: 100%;
+				flex: 1;
+				overflow-y: auto;
+				border-top: 1px solid #636363;
+				border-bottom: 1px solid #aaa;
+			}
+			
+			
+			
+			#swiper-container2 {
+				background: #9a9fa5;
+				height: 0.52rem;
+				text-align: center;
+				line-height: 0.52rem;
+			}
+			
+			.shop div{
+				float: left;
+				margin: 0.35rem;
+				width: 2.46rem;
+				font-size: 0.21rem;
+				height: 3.26rem;
+			}
+			
+			.shop div img{
+				width: 2.44rem;
+				height: 2.44rem;
+				border: 0.01rem solid #909092;
+				
+			}
+			
+			.shop p:nth-of-type(1){
+				width: 100%;
+				overflow: hidden;
+				text-align: center;
+				font-size: 0.22rem;
+				height: 0.59rem;
+				line-height: 0.59rem;
+				color: #3a3a3a;
+				white-space: nowrap;
+				text-overflow: ellipsis;
+			}
+			
+			.shop p:nth-of-type(2) span{
+				display: inline-block;
+				margin: 0 0.58rem 0 0.05rem;
+				font-size: 0.21rem;
+				color: #d41012;
+			}
+			.active-nav{
+				color: white;
+			}
+			
+			.shop p:nth-of-type(2) del{
+				font-size: 0.21rem;
+				height: 0.21rem;
+				color: #888888;
+			}
+			
+			#footer {
+				width: 100%;
+				height: 0.96rem;
+				background: #484850;
+				display: flex;
+			}
+			
+			#footer div {
+				width: 20%;
+				height: 0.96rem;
+				font-size: 0.24rem;
+				text-align: center;
+				color: #fefefe;
+				box-sizing: border-box;
+			}
+			
+			#footer div:nth-child(2) {
+				border-top: 2px solid #e5376c;
+			}
+			
+			#footer div:nth-of-type(1) img {
+				width: 0.48rem;
+				height: 0.48rem;
+				margin-top: 0.08rem;
+				margin-bottom: 0.11rem;
+			}
+			
+			#footer div:nth-of-type(2) img {
+				width: 0.44rem;
+				height: 0.38rem;
+				margin-top: 0.15rem;
+				margin-bottom: 0.1rem;
+			}
+			
+			#footer div:nth-of-type(3) img {
+				width: 0.48rem;
+				height: 0.42rem;
+				margin-top: 0.15rem;
+				margin-bottom: 0.09rem;
+			}
+			
+			#footer div:nth-of-type(4) img {
+				width: 0.47rem;
+				height: 0.42rem;
+				margin-top: 0.13rem;
+				margin-bottom: 0.11rem;
+			}
+			
+			#footer div:nth-of-type(5) img {
+				width: 0.46rem;
+				height: 0.12rem;
+				margin-top: 0.33rem;
+				margin-bottom: 0.21rem;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="container">
+			<div id="header">
+				<img src="img/jiantou.png" />
+				<p>ZXIU　走秀网</p>
+			</div>
+			<section>
+				<div class="swiper-container" id="swiper-container2">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide iconfont">&#xe64d;</div>
+						<div class="swiper-slide iconfont">&#xe664;</div>
+						<div class="swiper-slide iconfont">&#xe67d;</div>
+						<div class="swiper-slide iconfont">&#xe63d;</div>
+						<div class="swiper-slide iconfont">&#xe680;</div>
+						<div class="swiper-slide iconfont">&#xe684;</div>
+						<div class="swiper-slide iconfont">&#xe682;</div>
+						<div class="swiper-slide iconfont">&#xe670;</div>
+						<div class="swiper-slide iconfont">&#xe60c;</div>
+						<div class="swiper-slide iconfont">&#xe620;</div>
+					</div>
+				</div>
+				<div class="swiper-container" id="swiper-container3">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide shop"></div>
+						<div class="swiper-slide shop"></div>
+						<div class="swiper-slide shop"></div>
+						<div class="swiper-slide shop"></div>
+						<div class="swiper-slide shop"></div>
+						<div class="swiper-slide shop"></div>
+						<div class="swiper-slide shop"></div>
+						<div class="swiper-slide shop"></div>
+						<div class="swiper-slide shop"></div>
+						<div class="swiper-slide shop"></div>
+					</div>
+				</div>
+			</section>
+			<div id="footer">
+				<div>
+					<a href="index.html" style="color:white;"><img src="img/f1.png" />
+						<p>首页</p>
+					</a>
+				</div>
+				<div>
+					<a href="type.html" style="color:white;"><img src="img/f2.png" />
+						<p>分类</p>
+					</a>
+				</div>
+				<div>
+					<a href="buycar.html" style="color:white;"><img src="img/f3.png" />
+						<p>购物车</p>
+					</a>
+				</div>
+				<div>
+					<a href="myshow.html" style="color:white;"><img src="img/f4.png" />
+						<p>我的秀</p>
+					</a>
+				</div>
+				<div>
+					<a href="more.html" style="color:white;"><img src="img/f5.png" />
+						<p>更多</p>
+					</a>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		window.onload = function() {
+			$(function() {
+				var mySwiper2 = new Swiper('#swiper-container2', {
+					watchSlidesProgress: true,
+					watchSlidesVisibility: true,
+					slidesPerView: 10,
+					onTap: function() {
+						mySwiper3.slideTo(mySwiper2.clickedIndex)
+					}
+				})
+				var mySwiper3 = new Swiper('#swiper-container3', {
+
+					onSlideChangeStart: function() {
+						updateNavPosition()
+					}
+
+				})
+
+				function updateNavPosition() {
+					$('#swiper-container2 .active-nav').removeClass('active-nav')
+					var activeNav = $('#swiper-container2 .swiper-slide').eq(mySwiper3.activeIndex).addClass('active-nav');
+
+					if(!activeNav.hasClass('swiper-slide-visible')) {
+						console.log(1);
+						if(activeNav.index() > mySwiper2.activeIndex) {
+							console.log(2);
+							var thumbsPerNav = Math.floor(mySwiper2.width / activeNav.width()) - 1
+							mySwiper2.slideTo(activeNav.index() - thumbsPerNav)
+						} else {
+							console.log(3);
+							mySwiper2.slideTo(activeNav.index())
+						}
+					}
+				}
+				var index=0;
+				for(var i=0;i<$(".shop").length;i++) {
+					$.ajax({
+						url: "http://datainfo.duapp.com/shopdata/getGoods.php",
+						dataType: "jsonp",
+						data: {
+							classID: i,
+						},
+						success: function(data) {
+							for(var m=0;m<data.length;m++){
+//								console.log(i)
+								var yuanjia=parseInt(data[m].price/(data[m].discount/10));
+								$(".shop").eq(index).append('<div><a href="javascript:;"><img src="'+data[m].goodsListImg+'"/><p>'+data[m].goodsName+'</p><p><span>￥'+data[m].price+'</span><del>￥'+yuanjia+'</del></p></a></div>')
+							}
+							index++;
+						}
+					});
+				}
+			})
+		}
+	</script>
+
+</html>

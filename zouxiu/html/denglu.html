@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="zh">
+<head>
+
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css">
+    <link href="../css/gg.css" rel="stylesheet">
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/jquery-ui.min.js"></script>
+    <script src="../js/denglu.js"></script>
+    <script src="../js/jquery.cookie.js"></script>
+</head>
+<body>
+<div id="header">
+    <div class="wrap">
+        <div style="height: 42px">
+            <div class="nav1">
+                <ul>
+                    <li class="li1" style="font-size: 20px;position: absolute;top: 20px;">
+                        <a href="../html/zhuce.html">若无账号在此<span style="color: red">注册</span></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="logo">
+                <a href="#"></a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class='login'>
+    <div class='login_title'>
+        <span>账号登录</span>
+    </div>
+    <div class='login_fields'>
+        <div class='login_fields__user'>
+            <div class='icon'>
+                <img src='../img/user_icon_copy.png'>
+            </div>
+            <input placeholder='用户名/手机/邮箱' type='text' id="tx1">
+            </input>
+        </div>
+        <div class='login_fields__password'>
+            <div class='icon'>
+                <img src='../img/lock_icon_copy.png'>
+            </div>
+            <input placeholder='密码' type='password' id="psd2">
+        </div>
+        <div class='login_fields__submit'>
+            <input type='submit' value='登录' id="denglu">
+            <div class='forgot'>
+                <a href='#'>忘记密码?</a>
+            </div>
+        </div>
+    </div>
+    <div class='success yes'>
+        <h2>认证成功</h2>
+        <p>欢迎回来</p>
+    </div>
+    <div class='disclaimer'>
+        <p></p>
+    </div>
+    <div class='success no'>
+        <h2>认证失败</h2>
+        <p>账号/密码 错误</p>
+    </div>
+    <div class='disclaimer'>
+        <p></p>
+    </div>
+</div>
+<div class='authent'>
+    <img src='../img/puff.svg'>
+    <p>认证中...</p>
+</div>
+</body>
+</html>

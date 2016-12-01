@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>购物车</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body,html{
+			font-family: "微软雅黑";
+			width: 100%;
+			height: 100%;
+			background: #fefcfd;
+		}
+		html{
+			font-size: 15.625vw;
+		}
+		img {
+			border: 0;
+			vertical-align: bottom;
+		}
+		a{
+			text-decoration: none;
+		}	
+		li{
+			list-style: none;
+		}
+		#container{
+			height: 100%;
+			display: flex;
+			overflow: hidden;
+			flex-direction: column;
+		}
+		#header {
+			width: 100%;
+			height: 0.86rem;
+			border-top: 1px solid #acaaab;
+			border-bottom: 1px solid #707070;
+			background: #e43669;
+			font-size: 0.39rem;
+			line-height: 0.86rem;
+			color: white;
+			text-align: center;
+			position: relative;
+		}
+		
+		#header img{
+			width: 0.51rem;
+			height: 0.34rem;
+			position: absolute;
+			top:0.29rem;
+			left:0.2rem ;
+		}
+		
+		#header button{
+			height: 0.55rem;
+			width: 1.1rem;
+			font-size: 0.24rem;
+			color: white;
+			border: none;
+			background: #dc1c58;
+			border-radius: 0.08rem;
+			box-shadow: 0 0 3px white;
+			position: absolute;
+			top:0.15rem;
+			right: 0.12rem;
+		}
+		section {
+			width: 100%;
+			flex: 1;
+			overflow-y: auto;
+			border-top: 1px solid #636363;
+			border-bottom: 1px solid #aaa;
+			position: relative;
+		}	
+		.main {
+			display: flex;
+			position: absolute;
+			width: 100%;
+			height: 2.3rem;
+			border-top: 1px solid #636363;
+			border-bottom: 1px solid #aaa;
+			justify-content: center;
+			align-items: center;
+			font-size:0.24rem;
+		}
+		.main .list{
+			width: 3.57rem;
+		}
+		.main img {
+			width: 1.72rem;
+			height: 1.72rem;
+			margin-right: 0.25rem;
+			border: 1px solid #bababa;
+		}
+		.list p {
+			line-height: 0.4rem;
+		}
+		.list .pp{
+			display: flex;
+			align-items: center;	
+		}
+		.list em{
+			font-style: normal;
+			color: #e3366b;
+		}
+		.img{
+			height: 1.2rem;
+		}
+		.img img:nth-child(1){
+			width: 0.13rem;
+			height: 0.23rem;
+			border: 0;	
+			margin-right: 0.25rem;
+			margin-bottom: 0.55rem;
+		}
+		
+		.main button{
+			position: absolute;
+			width: 1.38rem;
+			height: 0.55rem;
+			top: 1.42rem;
+			right:0.32rem ;
+			outline: none;
+			border: none;
+			background: url("img/btn.png");
+			background-size:cover ;
+			border-radius: 0.08rem;
+			color: white;
+		}
+		
+			
+		
+		
+		
+		
+		#footer{
+			width: 100%;
+			height: 0.96rem;
+			background: #484850;
+			display: flex;
+		}
+		#footer div{
+			width: 20%;
+			height: 0.96rem;
+			font-size: 0.24rem;
+			text-align: center;
+			color: #fefefe;
+			box-sizing: border-box;
+		}
+		#footer div:nth-child(4){
+			border-top: 2px solid #e5376c;
+		}
+		#footer div:nth-of-type(1) img{
+			width: 0.48rem;
+			height: 0.48rem;
+			margin-top: 0.08rem;
+			margin-bottom: 0.11rem;
+		}
+		#footer div:nth-of-type(2) img{
+			width: 0.44rem;
+			height: 0.38rem;
+			margin-top: 0.18rem;
+			margin-bottom: 0.1rem;	
+		}
+		#footer div:nth-of-type(3) img{
+			width: 0.48rem;
+			height: 0.42rem;
+			margin-top: 0.15rem;
+			margin-bottom: 0.09rem;
+		}
+		#footer div:nth-of-type(4) img{
+			width: 0.47rem;
+			height: 0.42rem;
+			margin-top: 0.1rem;
+			margin-bottom: 0.11rem;
+		}
+		#footer div:nth-of-type(5) img{
+			width: 0.46rem;
+			height: 0.12rem;
+			margin-top: 0.33rem;
+			margin-bottom: 0.21rem;
+		}
+		
+		
+				
+		</style>
+	</head>
+
+	<body>
+		<div id="container">
+			<div id="header">
+				<img src="img/jiantou.png"/>
+				<p>我的订单</p>
+			</div>
+			<section>
+				<div class="main">
+					<img src="img/shop.png" />
+					<div class="list">
+						<p>ESPRIT 气质V领玫红</p>
+						<p>T恤</p>
+						<p>单价：<em>￥199</em></p>
+						<p class="pp">数量：<span>1</span></p>
+					</div>
+					<div class="img">
+						<img src="img/lll.png"/>
+					</div>
+					<button>取消订单</button>
+				</div>
+			</section>
+			<div id="footer">
+				<div><a href="index.html" style="color:white;"><img src="img/f1.png"/><p>首页</p></a></div>
+				<div><a href="type.html" style="color:white;"><img src="img/f2.png"/><p>分类</p></a></div>
+				<div><a href="buycar.html" style="color:white;"><img src="img/f3.png"/><p>购物车</p></a></div>
+				<div><a href="myshow.html" style="color:white;"><img src="img/f4.png"/><p>我的秀</p></a></div>
+				<div><a href="more.html" style="color:white;"><img src="img/f5.png"/><p>更多</p></a></div>
+			</div>
+		</div>
+	</body>
+</html>
