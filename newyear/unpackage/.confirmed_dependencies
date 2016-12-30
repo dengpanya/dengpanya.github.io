@@ -1,0 +1,41 @@
+{
+	"index.html": {
+		"resources": [
+			"css/index.css",
+			"index.html",
+			"img/index.png",
+			"js/jquery.min.js",
+			"img/timg.jpg",
+			"img/background.png",
+			"js/index.js",
+			"shake.html"
+		],
+		"refer": [
+			"shake.html"
+		]
+	},
+	"shake.html": {
+		"resources": [
+			"img/2.png",
+			"shake.html",
+			"index.html",
+			"img/8.png",
+			"img/4.png",
+			"img/3.png",
+			"css/index.css",
+			"js/jquery.min.js",
+			"img/timg.jpg",
+			"img/background.png",
+			"js/index.js",
+			"img/9.png",
+			"img/7.png",
+			"img/1.png",
+			"img/12.png",
+			"img/5.png",
+			"img/6.png"
+		],
+		"refer": [
+			"index.html"
+		]
+	}
+}
