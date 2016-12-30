@@ -59,7 +59,6 @@
         init();
         function init() {  
             if (window.DeviceMotionEvent) {  
-		    alert(1)
                 window.addEventListener('devicemotion', deviceMotionHandler, false);  
             } else {  
                 alert('not support mobile event');  
@@ -69,7 +68,6 @@
             var acceleration = eventData.accelerationIncludingGravity;  
             var curTime = new Date().getTime();  
             if ((curTime - last_update) > 50) {  
-		    alert(2)
                 var diffTime = curTime - last_update;  
                 last_update = curTime;  
                 x = acceleration.x;  
