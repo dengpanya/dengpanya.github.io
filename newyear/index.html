@@ -76,11 +76,11 @@
                 var speed = Math.abs(x + y + z - last_x - last_y - last_z) / diffTime * 10000;  
   
                 if (speed > SHAKE_THRESHOLD) {  
-			alert("震动")
+			alert("震动哈哈哈")
 //                     p = plus.audio.createPlayer("_www/audio/shake.wav");
 // 					p.play();
 					setTimeout(function() {
-						location.href="shake.html";
+						location.href="shake.html?id=1";
 					}, 2000);   
                 }  
                 last_x = x;  
