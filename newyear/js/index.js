@@ -29,7 +29,7 @@ $.ajax({
          success:function(res){
          	console.log(res);
 	        $("#headpic").attr("src",res.headpic);
-	        $("#nickname").html("陈三");
+	        $("#nickname").html(res.nickname);
          }
          });
 //$.post("http://www.chic-tech.cn/appService/homepage/getwxuser",{id:1},function(res){
