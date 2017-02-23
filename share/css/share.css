@@ -1,0 +1,196 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    width: 100%;
+    height: 100%;
+    background: #f7f7f7;
+}
+a{
+    text-decoration: none;
+}
+.jobTitle{
+    width: 100%;
+    height: 45px;
+    background: #fff;
+    font-size: 14px;
+    line-height: 45px;
+    text-align: center;
+}
+
+.swiper-container{
+    width: 100%;
+    height: 100%;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    background: rgba(0,0,0,.8);
+}
+.swiper-wrapper{
+    width: 100%;
+    height: 100%;
+}
+.swiper-slide{
+    width: 100%;
+    text-align: center;
+}
+.swiper-slide img{
+    width: 100%;
+    vertical-align: middle;
+}
+
+.swiper-slide span{
+    width: 0;
+    height: 100%;
+    display: inline-block;
+    vertical-align: middle;
+}
+.swiper-pagination{
+    color: white;
+}
+
+
+.jobDetails{
+    width: 100%;
+    height: auto;
+    background: #fff;
+    margin-top: 5px;
+    box-sizing: border-box;
+    padding: 10px 15px;
+    display: flex;
+    position: relative;
+}
+.photo{
+    width: 40px;
+    height: 40px;
+}
+.photo img{
+    width: 100%;
+    height: 100%;
+}
+.jobDetails-box{
+    flex: 1;
+    box-sizing: border-box;
+    padding-left: 10px;
+}
+.name{
+    width: 100%;
+    height: 25px;
+    line-height: 20px;
+    font-size: 14px;
+    font-weight: 600;
+}
+.jobcontain{
+    width: 100%;
+    font-size: 12px;
+    line-height: 16px;
+    box-sizing: border-box;
+    padding-bottom: 10px;
+}
+.jobImages{
+    width: 100%;
+    /*box-sizing: border-box;*/
+    overflow: hidden;
+}
+.jobImages .image{
+    float: left;
+    width: 27%;
+    margin-top: 5px;
+    margin-right: 5px;
+    overflow: hidden;
+    /*height: 80px;*/
+}
+.jobImages .image img{
+    width: 100%;
+    /*height: 100%;*/
+    /*vertical-align: bottom;*/
+    position: relative;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+.jobImages .image .img-one{
+	/*height: 100%;*/
+}
+.date{
+    width: 100%;
+    height: 25px;
+    line-height: 30px;
+    color: #999;
+    font-size: 10px;
+}
+
+.signup{
+    position: absolute;
+    right: 20px;
+    bottom: 10px;
+    display: block;
+    width: 80px;
+    height: 25px;
+    color: #000;
+    line-height: 25px;
+    text-align: center;
+    border: 1px solid #000;
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+.interest{
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    font-size: 12px;
+}
+.box{
+    width: 100%;
+    /*height: 100px;*/
+    /*background: #fff;*/
+}
+.bottom-box{
+    width: 100%;
+    height: 145px;
+}
+.bottom-box .makeChic{
+    font-size: 14px;
+    font-family: "Microsoft Yahei";
+    letter-spacing: 3px;
+}
+.chicLogo-box{
+    width: 100%;
+    height: 70px;
+}
+.chicLogo{
+    width: 70px;
+    height: 70px;
+    background: #000 url("../img/raw.png") no-repeat 0 center;
+    border-radius: 10px;
+    margin: 0 auto;
+    background-size: 70px;
+}
+
+
+.upload{
+    display: block;
+    width: 80px;
+    height: 30px;
+    color: #000;
+    line-height: 30px;
+    text-align: center;
+    font-size: 14px;
+    border-radius: 5px;
+    border: 1px solid #000;
+    margin: 10px auto;
+    font-family: "Microsoft Yahei";
+}
+
+
+
+
