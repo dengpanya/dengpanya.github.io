@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<script type="text/javascript" src="zepto.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="weui.css"/>
+		<link rel="stylesheet" type="text/css" href="weui2.css"/>
+		<link rel="stylesheet" href="style.css" type="text/css" />
+		<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    	<script src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+		<script src="https://res.wx.qq.com/open/libs/weuijs/1.0.0/weui.min.js"></script>
+		<title>撩瓜日常</title>
+	</head>
+	<style>
+		body {
+		    margin: 0;
+		    padding: 0;
+		    background: #ffe;
+		    font-size: 14px;
+		    font-family: 微软雅黑,宋体,sans-serif;
+		    color: #231f20;
+		    overflow: auto;
+		}
+	
+		.baby {
+		    left: 50%;
+		    top: 50%;
+		    transform: translate(-50%,-50%);
+		    -webkit-animation:gogogo 4s infinite linear ;
+		}
+		@-webkit-keyframes gogogo {
+			0%{
+				width:200%;
+			}
+			50%{
+				width:150%;
+			}
+			100%{
+				width:200%;
+			}
+		}
+        .cube {
+            position: relative;
+            font-size: 80px;
+            width: 200px;height:200px;
+            margin: 140px auto;
+            transform-style: preserve-3d;
+            transform-origin:center center 100px;
+            /*transition:transform 1s linear;*/
+            /*transform: rotateY(80deg);*/
+        }
+        .cube > div {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border: 1px solid #999;
+            color: white;
+            text-align: center;
+            line-height: 200px;
+        }
+        /*.cube:hover{*/
+            /*transform:rotateY(180deg);*/
+        /*}*/
+        .front {
+            transform:translateZ(200px);
+            transform-origin: top;
+        }
+        .top {
+            transform: rotateX(90deg);
+            transform-origin: top;
+        }
+        .right {
+            transform: rotateY(90deg);
+            transform-origin: right;
+        }
+        .left {
+            transform: rotateY(-90deg);
+            transform-origin: left;
+        }
+        .bottom {
+            transform: rotateX(-90deg);
+            transform-origin: bottom;
+        }
+        .back {
+            transform:rotateY(180deg);
+        }
+	</style>
+	<script type="text/javascript">
+		function ok(){
+				$.modal({
+	                title: "瓜瓜撩人框",
+	                text: "<br>真的吗？你答应了？",
+	                buttons: [
+	                    {text: '傻瓜！', onClick: function(){
+	                    	setTimeout(function(){
+	                    		$.modal({
+				                title: "瓜瓜撩人框",
+				                text: "<br>给我发消息吧，我爱你！",
+				                buttons: [
+				                    {text: '我也爱你！', onClick: function(){
+				                        $("body").html("")
+				                    }}
+				                ]
+				            });
+	                    	},300)
+	                    }}
+	                ]
+	            });
+			}
+	</script>
+	<body style="background-color: #ffe;">
+		<div class="first">
+			<img class="" src='flower.png' style='width: 150%;position: absolute;bottom: 0;'>
+			<img class="" src='flower1.png' style='width: 150%;position: absolute;bottom: 0;'>
+			<img class="" src='flower.png' style='width: 150%;position: absolute;top: 0;transform:rotateY(180deg) rotateX(180deg);'>
+			<img class="" src='flower1.png' style='width: 150%;position: absolute;top: 0;transform:rotateX(180deg);'>
+			<img class="baby" src='heart.png' style='width: 200%;position: absolute;z-index: 10;'>
+		</div>
+		<div class="second" style="opacity: 0;display: none;">
+			<img class="" src='flower.png' style='width: 150%;position: absolute;bottom: 0;'>
+			<img class="" src='flower1.png' style='width: 150%;position: absolute;bottom: 0;'>
+			<img class="" src='flower.png' style='width: 150%;position: absolute;top: 0;transform:rotateY(180deg) rotateX(180deg);'>
+			<img class="" src='flower1.png' style='width: 150%;position: absolute;top: 0;transform:rotateX(180deg);'>
+			<div class="cube">
+				<div class="front"><img class="" src='timg1.jpg' style='width: 100%;'></div>
+				<div class="back"><img class="" src='timg3.jpg' style='width: 100%;'></div>
+				<div class="right"><img class="" src='timg.jpg' style='width: 100%;height: 100%;'></div>
+			 	<div class="left"><img class="" src='timg2.jpg' style='width: 100%;'></div>
+				<div class="top"><img class="" src='timg3.jpg' style='width: 100%;'></div>
+				<div class="bottom"><img class="" src='timg3.jpg' style='width: 100%;'></div>
+			</div>
+			<div class="love" style="display: none;">
+				<p><a href="#" style="font-size: 18px;">那我现在可以开始撩你了么</a></p>
+			</div>
+		</div>
+		<div id="text" style="color:#FF0000;text-indent: 20px;margin-top: 10px;">
+			
+		</div>
+		<!--<div style="font-size: 12px;margin: 10px 0 0 10px;">&quot;小哥哥，我观察你很久了&quot;</div>
+		<br />
+		<br />
+		<div style="font-size: 18px;margin: 10px 0 0 10px;font-weight: 900;">做我男朋友好不好？</div>
+		<img src="liao.png"/>
+		<div style="margin: 0 auto;width: 305px;">
+			<a href="javascript:ok();" class="weui-btn" style="color: white;background-color: #1AAD19;display: inline-block;width: 150px;padding:5px 0;border-radius: 5px;text-align: center;text-decoration: none;">好</a>
+			<a href="javascript:;" class="weui-btn" style="color: white;background-color: #E64340;display: inline-block;width: 150px;padding:5px 0;border-radius: 5px;text-align: center;text-decoration: none;">不好</a>
+		</div>-->
+	</body>
+	<script>
+		$(function(){
+			var arry = ["亲","爱","的","小","仙","女",",","我","爱","你","瓜","瓜","瓜","瓜","瓜","瓜","瓜","瓜","瓜","瓜","瓜","瓜","瓜","瓜",];		
+			$(".baby").click(function(){
+				$(".first").animate({"opacity":"0"},2000,function(){
+					$(".first").css({display:"none"});
+					$(".second").css({display:"block"}).animate({"opacity":"1"},2000,function(){
+						var m=0;
+	                	var mx=0;
+	                	var my=0;
+	                	var mz=0;
+	                	var timer;
+						timer = setInterval(function(){
+							m+=0.1;
+//	                		mx+=0.1;
+	                		my+=0.1;
+//	                		mz+=0.1;
+							$(".cube").animate({"rotate3d":mx+","+my+","+mz+","+m+"deg"})
+						},10);
+						var flag = true;
+						$(".cube").click(function(){
+							if(flag){
+								flag = false;
+								clearInterval(timer);
+							}else{
+								flag = true;
+								timer = setInterval(function(){
+									m+=0.1;
+//			                		mx+=0.1;
+			                		my+=0.1;
+//			                		mz+=0.1;
+									$(".cube").animate({"rotate3d":mx+","+my+","+mz+","+m+"deg"})
+								},10);
+							}
+	
+						})
+						setTimeout(function(){
+							$(".love").fadeIn(2000);
+						},5000)
+					});
+				});
+			})
+		})
+	</script>
+</html>
