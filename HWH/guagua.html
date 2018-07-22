@@ -4,6 +4,7 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 		<script type="text/javascript" src="zepto.min.js"></script>
+		<script type="text/javascript" src="jquery.js"></script>
 		<link rel="stylesheet" type="text/css" href="weui.css"/>
 		<link rel="stylesheet" type="text/css" href="weui2.css"/>
 		<link rel="stylesheet" href="style.css" type="text/css" />
@@ -40,16 +41,43 @@
 				width:200%;
 			}
 		}
+		.baby1 {
+		    right: -72px;
+		    bottom: -25px;
+		    -webkit-animation:gogogo1 4s infinite linear ;
+		}
+		@-webkit-keyframes gogogo1 {
+			0%{
+				width:75%;
+			}
+			50%{
+				width:65%;
+			}
+			100%{
+				width:75%;
+			}
+		}
         .cube {
             position: relative;
             font-size: 80px;
             width: 200px;height:200px;
-            margin: 140px auto;
+            margin: 115px auto;
             transform-style: preserve-3d;
-            transform-origin:center center 100px;
-            /*transition:transform 1s linear;*/
-            /*transform: rotateY(80deg);*/
+            transform-origin:center center 95px;
+		    -webkit-animation:gogogo2 36s infinite linear ;
+            transform: rotateY(0deg);
         }
+        @-webkit-keyframes gogogo2 {
+			0%{
+				transform:rotateY(0deg);
+			}
+			50%{
+				transform:rotateY(180deg);
+			}
+			100%{
+				transform:rotateY(360deg);
+			}
+		}
         .cube > div {
             position: absolute;
             width: 200px;
@@ -59,9 +87,6 @@
             text-align: center;
             line-height: 200px;
         }
-        /*.cube:hover{*/
-            /*transform:rotateY(180deg);*/
-        /*}*/
         .front {
             transform:translateZ(200px);
             transform-origin: top;
@@ -85,21 +110,53 @@
         .back {
             transform:rotateY(180deg);
         }
+		.content {
+			display:inline-block;
+			width:29%;
+			padding-top:70px;
+			margin-right:5px;
+			margin-left:5px;
+		}
+		div.second_first>div>div {
+			display:block;
+			height:20px;
+		}
+		div.second_first>div>div>div {
+			width:13px;
+			height:13px;
+			background-color:#ff00d8;
+			display:inline-block;
+			float:left;
+			margin:2px;
+		}
+		div.second_first>div.content1>div>div.fl {
+			background-color:#ffd400;
+		}
+		div.second_first>div.content2>div>div.fl {
+			background-color:#ffc20e;
+		}
+		div.second_first>div.content3>div>div.fl {
+			background-color:#fdb933;
+		}
+
 	</style>
 	<script type="text/javascript">
 		function ok(){
 				$.modal({
-	                title: "瓜瓜撩人框",
-	                text: "<br>真的吗？你答应了？",
+	                title: "撩瓜框",
+	                text: "<br>瓜瓜，以后再也不会跟你生气了！",
 	                buttons: [
 	                    {text: '傻瓜！', onClick: function(){
 	                    	setTimeout(function(){
 	                    		$.modal({
-				                title: "瓜瓜撩人框",
-				                text: "<br>给我发消息吧，我爱你！",
+				                title: "撩瓜框",
+				                text: "<br>给我打电话，叫我起床，我爱你！",
 				                buttons: [
 				                    {text: '我也爱你！', onClick: function(){
-				                        $("body").html("")
+				                    	location.href = "tel:18939503678";
+				                    }},
+				                    {text: '玩了小游戏才叫你！', onClick: function(){
+				                    	location.href = "play.html";
 				                    }}
 				                ]
 				            });
@@ -110,7 +167,8 @@
 			}
 	</script>
 	<body style="background-color: #ffe;">
-		<div class="first">
+		<audio id="music" autoplay="autoplay" loop="loop" preload="auto" src="love.mp3"></audio>
+		<div class="first">	
 			<img class="" src='flower.png' style='width: 150%;position: absolute;bottom: 0;'>
 			<img class="" src='flower1.png' style='width: 150%;position: absolute;bottom: 0;'>
 			<img class="" src='flower.png' style='width: 150%;position: absolute;top: 0;transform:rotateY(180deg) rotateX(180deg);'>
@@ -118,6 +176,232 @@
 			<img class="baby" src='heart.png' style='width: 200%;position: absolute;z-index: 10;'>
 		</div>
 		<div class="second" style="opacity: 0;display: none;">
+			<img class="baby1" src='heart.png' style='width: 75%;position: absolute;z-index: 10;'>
+			<div class="second_first" style="width: 100%; margin: auto;">
+			    <p style="font-size: 16px;text-align: center;margin-top: 140px;">
+			        <span>如</span>
+			        <span>果</span>
+			        <span>每</span>
+			        <span>个</span>
+			        <span>人</span>
+			        <span>一</span>
+			        <span>生</span>
+			        <span>只</span>
+			        <span>会</span>
+			        <span>遇</span>
+			        <span>到</span>
+			        <span>一</span>
+			        <span>颗</span>
+			        <span>流</span>
+			        <span>星</span>
+			        <span>，</span>
+			        <span>那</span>
+			        <span>么</span>
+			        <span>和</span>
+			        <span>你</span>
+			        <span>在</span>
+			        <span>一</span>
+			        <span>起</span>
+			        <span>就</span>
+			        <span>是</span>
+			        <span>我</span>
+			        <span>惟</span>
+			        <span>一</span>
+			        <span>的</span>
+			        <span>愿</span>
+			        <span>望</span>
+			        <span>！</span>
+			    </p>
+			    <div class="content content1">
+			        <div style="margin-left:20px;">
+			            <div class="fl"></div>
+			            <div class="fl"></div>
+			            <div class="fl"></div>
+			            <div class="fl"></div>
+			            <div class="fl"></div>
+			        </div>
+			        <div style="margin-left:20px;">
+			            <div class="fl"></div>
+			            <div class="fl"></div>
+			            <div class="fl"></div>
+			            <div class="fl"></div>
+			            <div class="fl"></div>
+			        </div>
+			        <div style="margin-left:20px;">
+			            <div class="fl"></div>
+			            <div class="fl"></div>
+			        </div>
+			        <div style="margin-left:20px;">
+			            <div class="fl"></div>
+			            <div class="fl"></div>
+			        </div>
+			        <div style="margin-left:20px;">
+			            <div class="fl"></div>
+			            <div class="fl"></div>
+			            <div class="fl"></div>
+			            <div class="fl"></div>
+			            <div class="fl"></div>
+			        </div>
+			        <div style="margin-left:20px;">
+			            <div class="fl"></div>
+			            <div class="fl"></div>
+			            <div class="fl"></div>
+			            <div class="fl"></div>
+			            <div class="fl"></div>
+			        </div>
+			        <div style="margin-left:20px;">
+			            <div class="fl" style="margin-left:52px;"></div>
+			            <div class="fl"></div>
+			        </div>
+			        <div style="margin-left:20px;">
+			            <div class="fl" style="margin-left:52px;"></div>
+			            <div class="fl"></div>
+			        </div>
+			        <div style="margin-left:20px;">
+			            <div class="fl"></div>
+			            <div class="fl"></div>
+			            <div class="fl"></div>
+			            <div class="fl"></div>
+			            <div class="fl"></div>
+			        </div>
+			        <div style="margin-left:20px;">
+			            <div class="fl"></div>
+			            <div class="fl"></div>
+			            <div class="fl"></div>
+			            <div class="fl"></div>
+			            <div class="fl"></div>
+			        </div>
+			    </div>
+			    <div class="content content2">
+			        <div style="margin-left:20px;">
+			            <div class="fl"></div>
+			            <div class="fl"></div>
+			            <div class="fl"></div>
+			            <div class="fl"></div>
+			            <div class="fl"></div>
+			        </div>
+			        <div style="margin-left:20px;">
+			            <div class="fl"></div>
+			            <div class="fl"></div>
+			            <div class="fl"></div>
+			            <div class="fl"></div>
+			            <div class="fl"></div>
+			        </div>
+			        <div style="margin-left:20px;">
+			            <div class="fl" style="margin-left:52px;"></div>
+			            <div class="fl"></div>
+			        </div>
+			        <div style="margin-left:20px;">
+			            <div class="fl" style="margin-left:52px;"></div>
+			            <div class="fl"></div>
+			        </div>
+			        <div style="margin-left:20px;">
+			            <div class="fl"></div>
+			            <div class="fl"></div>
+			            <div class="fl"></div>
+			            <div class="fl"></div>
+			            <div class="fl"></div>
+			        </div>
+			        <div style="margin-left:20px;">
+			            <div class="fl"></div>
+			            <div class="fl"></div>
+			            <div class="fl"></div>
+			            <div class="fl"></div>
+			            <div class="fl"></div>
+			        </div>
+			        <div style="margin-left:20px;">
+			            <div class="fl"></div>
+			            <div class="fl"></div>
+			        </div>
+			        <div style="margin-left:20px;">
+			            <div class="fl"></div>
+			            <div class="fl"></div>
+			        </div>
+			        <div style="margin-left:20px;">
+			            <div class="fl"></div>
+			            <div class="fl"></div>
+			            <div class="fl"></div>
+			            <div class="fl"></div>
+			            <div class="fl"></div>
+			        </div>
+			        <div style="margin-left:20px;">
+			            <div class="fl"></div>
+			            <div class="fl"></div>
+			            <div class="fl"></div>
+			            <div class="fl"></div>
+			            <div class="fl"></div>
+			        </div>
+			    </div>
+				<div class="content content3">
+			        <div style="margin-left:20px;">
+			            <div class="fl"></div>
+			            <div class="fl"></div>
+			            <div class="fl"></div>
+			            <div class="fl"></div>
+			            <div class="fl"></div>
+			        </div>
+			        <div style="margin-left:20px;">
+			            <div class="fl"></div>
+			            <div class="fl"></div>
+			            <div class="fl"></div>
+			            <div class="fl"></div>
+			            <div class="fl"></div>
+			        </div>
+			        <div style="margin-left:20px;">
+			            <div class="fl"></div>
+			            <div class="fl"></div>
+			            <div class="fl" style="margin-left: 19px;"></div>
+			            <div class="fl"></div>
+			        </div>
+			        <div style="margin-left:20px;">
+			            <div class="fl"></div>
+			            <div class="fl"></div>
+			            <div class="fl" style="margin-left: 19px;"></div>
+			            <div class="fl"></div>
+			        </div>
+			        <div style="margin-left:20px;">
+			            <div class="fl"></div>
+			            <div class="fl"></div>
+			            <div class="fl" style="margin-left: 19px;"></div>
+			            <div class="fl"></div>
+			        </div>
+			        <div style="margin-left:20px;">
+			            <div class="fl"></div>
+			            <div class="fl"></div>
+			            <div class="fl" style="margin-left: 19px;"></div>
+			            <div class="fl"></div>
+			        </div>
+			        <div style="margin-left:20px;">
+			            <div class="fl"></div>
+			            <div class="fl"></div>
+			            <div class="fl" style="margin-left: 19px;"></div>
+			            <div class="fl"></div>
+			        </div>
+			        <div style="margin-left:20px;">
+			            <div class="fl"></div>
+			            <div class="fl"></div>
+			            <div class="fl" style="margin-left: 19px;"></div>
+			            <div class="fl"></div>
+			        </div>
+			        <div style="margin-left:20px;">
+			            <div class="fl"></div>
+			            <div class="fl"></div>
+			            <div class="fl"></div>
+			            <div class="fl"></div>
+			            <div class="fl"></div>
+			        </div>
+			        <div style="margin-left:20px;">
+			            <div class="fl"></div>
+			            <div class="fl"></div>
+			            <div class="fl"></div>
+			            <div class="fl"></div>
+			            <div class="fl"></div>
+			        </div>
+			   </div>
+			</div>
+
+		</div>
+		<div class="thirt" style="width: 100%; margin: auto;display: none;">
 			<img class="" src='flower.png' style='width: 150%;position: absolute;bottom: 0;'>
 			<img class="" src='flower1.png' style='width: 150%;position: absolute;bottom: 0;'>
 			<img class="" src='flower.png' style='width: 150%;position: absolute;top: 0;transform:rotateY(180deg) rotateX(180deg);'>
@@ -130,8 +414,11 @@
 				<div class="top"><img class="" src='timg3.jpg' style='width: 100%;'></div>
 				<div class="bottom"><img class="" src='timg3.jpg' style='width: 100%;'></div>
 			</div>
-			<div class="love" style="display: none;">
-				<p><a href="#" style="font-size: 18px;">那我现在可以开始撩你了么</a></p>
+			<div class="love" style="display: none;margin-top: -110px;">
+				<p class="p1" style="margin: 10px 0px;"><a href="#" style="font-size: 18px;"></a></p>
+				<p class="p2" style="margin: 10px 0px;"><a href="#" style="font-size: 18px;"></a></p>
+				<p class="p3" style="margin: 10px 0px;"><a href="#" style="font-size: 18px;"></a></p>
+				<p class="p4" style="margin: 10px 0px;"><a href="#" style="font-size: 18px;"></a></p>
 			</div>
 		</div>
 		<div id="text" style="color:#FF0000;text-indent: 20px;margin-top: 10px;">
@@ -148,47 +435,119 @@
 		</div>-->
 	</body>
 	<script>
-		$(function(){
-			var arry = ["亲","爱","的","小","仙","女",",","我","爱","你","瓜","瓜","瓜","瓜","瓜","瓜","瓜","瓜","瓜","瓜","瓜","瓜","瓜","瓜",];		
+		$(function(){	
 			$(".baby").click(function(){
 				$(".first").animate({"opacity":"0"},2000,function(){
 					$(".first").css({display:"none"});
+					animate();
 					$(".second").css({display:"block"}).animate({"opacity":"1"},2000,function(){
-						var m=0;
-	                	var mx=0;
-	                	var my=0;
-	                	var mz=0;
-	                	var timer;
-						timer = setInterval(function(){
-							m+=0.1;
-//	                		mx+=0.1;
-	                		my+=0.1;
-//	                		mz+=0.1;
-							$(".cube").animate({"rotate3d":mx+","+my+","+mz+","+m+"deg"})
-						},10);
-						var flag = true;
-						$(".cube").click(function(){
-							if(flag){
-								flag = false;
-								clearInterval(timer);
-							}else{
-								flag = true;
-								timer = setInterval(function(){
-									m+=0.1;
-//			                		mx+=0.1;
-			                		my+=0.1;
-//			                		mz+=0.1;
-									$(".cube").animate({"rotate3d":mx+","+my+","+mz+","+m+"deg"})
-								},10);
-							}
-	
-						})
-						setTimeout(function(){
-							$(".love").fadeIn(2000);
-						},5000)
+						$(".baby1").click(function(){
+							$(".second").animate({"opacity":"0"},2000,function(){
+								$(".second").css({display:"none"});
+								$(".thirt").css({display:"block"}).animate({"opacity":"1"},2000,function(){
+									setTimeout(function(){
+										var str_array = ["那","我","现","在","可","以","开","始","撩","你","了","么","！"];
+										var num = 0;
+										var str = "";
+										var timer1 = setInterval(function(){
+											str += str_array[num];
+											console.log(str);
+											$(".love .p1 a").text(str);
+											num++;
+											if(num >= str_array.length){
+												clearInterval(timer1);
+												var str_array1 = ["以","后","的","日","子","里",",","工","资","上","交","!","家","务","全","包","！"];
+												var num1 = 0;
+												var str1 = "";
+												var timer2 = setInterval(function(){
+													str1 += str_array1[num1];
+													$(".love .p2 a").text(str1);
+													num1++;
+													if(num1 >= str_array1.length){
+														clearInterval(timer2);
+														var str_array2 = ["房","产","证","写","你","的","名","字","！","不","跟","你","吵","架","！"];
+														var num2 = 0;
+														var str2 = "";
+														var timer3 = setInterval(function(){
+															str2 += str_array2[num2];
+															$(".love .p3 a").text(str2);
+															num2++;
+															if(num2 >= str_array2.length){
+																clearInterval(timer3);
+																var str_array3 = ["会","卖","萌","!",",","会","撒","娇","！","一","直","爱","你","！"];
+																var num3 = 0;
+																var str3 = "";
+																var timer4 = setInterval(function(){
+																	str3 += str_array3[num3];
+																	$(".love .p4 a").text(str3);
+																	num3++;
+																	if(num3 >= str_array3.length){
+																		clearInterval(timer4);
+																		setTimeout(function(){
+																			ok();
+																		},5000);
+																	}
+																},500);
+															}
+														},500);
+													}
+												},500);
+											}
+										},500);
+										$(".love").fadeIn(2000);
+									},5000)
+								});
+							});
+						});
 					});
 				});
-			})
-		})
+			});
+		});
+		function animate() {
+		    $('div.second_first>div>div>div').each(function() {
+		        $(this).css({
+		            position: 'relative',
+		            top: '-400px',
+		            opacity: 0
+		        });
+		        var wait = Math.floor((Math.random() * 3000) + 1);
+		        $(this).delay(wait).animate({
+		            top: '0px',
+		            opacity: 1
+		        }, 2000, function() {
+		            $(this).delay(wait).animate({
+		                top: '50px',
+		                opacity: 0
+		            }, 1000, function() {
+		                $(this).delay(wait).animate({
+		                    top: '0px',
+		                    opacity: 1
+		                }, 500);
+		            });
+		        });
+		    });
+		    $('span').each(function() {
+		        $(this).css({
+		            position: 'relative',
+		            top: '-200px',
+		            opacity: 0
+		        });
+		        var wait = Math.floor((Math.random() * 3000) + 1);
+		        $(this).delay(wait).animate({
+		            top: '0px',
+		            opacity: 1
+		        }, 2000, function() {
+		            $(this).delay(wait).animate({
+		                top: '50px',
+		                opacity: 0
+		            }, 1000, function() {
+		                $(this).delay(wait).animate({
+		                    top: '0px',
+		                    opacity: 1
+		                }, 500);
+		            });
+		        });
+		    });
+		}
 	</script>
 </html>
