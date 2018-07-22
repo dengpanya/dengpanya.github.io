@@ -669,7 +669,8 @@ if (match) {
         }
 
         function b() {
-            u.href = B.replace(/#\{level\}/, D)
+        	console.log(B.replace(/#\{level\}/, D)>=1);
+//          u.href = B.replace(/#\{level\}/, D)>=1?:1
         }
 
         function c() {

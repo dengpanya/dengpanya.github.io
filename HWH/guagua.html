@@ -4,13 +4,40 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 		<script type="text/javascript" src="zepto.min.js"></script>
-		<script type="text/javascript" src="jquery.js"></script>
 		<link rel="stylesheet" type="text/css" href="weui.css"/>
 		<link rel="stylesheet" type="text/css" href="weui2.css"/>
 		<link rel="stylesheet" href="style.css" type="text/css" />
 		<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
     	<script src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
 		<script src="https://res.wx.qq.com/open/libs/weuijs/1.0.0/weui.min.js"></script>
+		<script type="text/javascript">
+			window.$$=window.Zepto = Zepto
+			function ok(){
+				$$.modal({
+	                title: "撩瓜框",
+	                text: "<br>瓜瓜，以后再也不会跟你生气了！",
+	                buttons: [
+	                    {text: '傻瓜！', onClick: function(){
+	                    	setTimeout(function(){
+	                    		$$.modal({
+				                title: "撩瓜框",
+				                text: "<br>给我打电话，叫我起床，我爱你！",
+				                buttons: [
+				                    {text: '我也爱你！', onClick: function(){
+				                    	location.href = "tel:18939503678";
+				                    }},
+				                    {text: '玩了小游戏才叫你！', onClick: function(){
+				                    	location.href = "play.html?__hbt=1532294510429";
+				                    }}
+				                ]
+				            	});
+	                    	},300)
+	                    }}
+	                ]
+	            });
+			}
+		</script>
+		<script type="text/javascript" src="jquery.js"></script>
 		<title>撩瓜日常</title>
 	</head>
 	<style>
@@ -140,32 +167,7 @@
 		}
 
 	</style>
-	<script type="text/javascript">
-		function ok(){
-				$.modal({
-	                title: "撩瓜框",
-	                text: "<br>瓜瓜，以后再也不会跟你生气了！",
-	                buttons: [
-	                    {text: '傻瓜！', onClick: function(){
-	                    	setTimeout(function(){
-	                    		$.modal({
-				                title: "撩瓜框",
-				                text: "<br>给我打电话，叫我起床，我爱你！",
-				                buttons: [
-				                    {text: '我也爱你！', onClick: function(){
-				                    	location.href = "tel:18939503678";
-				                    }},
-				                    {text: '玩了小游戏才叫你！', onClick: function(){
-				                    	location.href = "play.html";
-				                    }}
-				                ]
-				            });
-	                    	},300)
-	                    }}
-	                ]
-	            });
-			}
-	</script>
+	
 	<body style="background-color: #ffe;">
 		<audio id="music" autoplay="autoplay" loop="loop" preload="auto" src="love.mp3"></audio>
 		<div class="first">	
@@ -487,13 +489,13 @@
 																			ok();
 																		},5000);
 																	}
-																},500);
+																},333);
 															}
-														},500);
+														},333);
 													}
-												},500);
+												},333);
 											}
-										},500);
+										},333);
 										$(".love").fadeIn(2000);
 									},5000)
 								});
